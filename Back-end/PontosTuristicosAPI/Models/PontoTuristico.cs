@@ -28,6 +28,9 @@ namespace PontosTuristicosAPI.Models
         public string Descricao { get; set; } = string.Empty;
 
         [Required]
+        public bool Ativo { get; set; }
+
+        [Required]
         public DateTime InclusaoDataHora { get; set; }
 
         [Required, ForeignKey("IdUsuario")]

@@ -101,16 +101,11 @@ namespace PontosTuristicosAPI.Data
                     CPF = "51954386842",
                     Estado = "SP",
                     Cidade = "Tupã",
-                    Ativo = true,
                     InclusaoDataHora = DateTime.Now
                 }
 
             );
 
         }
-    }
-
-    public class DbContextOptions<T>
-    {
     }
 }

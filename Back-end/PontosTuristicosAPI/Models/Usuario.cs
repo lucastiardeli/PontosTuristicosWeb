@@ -39,9 +39,6 @@ namespace PontosTuristicosAPI.Models
         [Required, StringLength(40)]
         public string Cidade { get; set; } = string.Empty;
 
-        [Required]
-        public bool Ativo { get; set; }
-
         [StringLength(50)]
         public string? Foto { get; set; }
 
