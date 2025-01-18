@@ -21,11 +21,34 @@ namespace PontosTuristicosAPI.Controllers
             _context = context;
         }
 
-        // GET
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PontoTuristico>>> GetPontosTuristicos()
+        public async Task<IActionResult> GetPontosTuristicos([FromQuery] string q = "", [FromQuery] int _page = 1, [FromQuery] int _limit = 5)
         {
-            return await _context.PontosTuristicos.ToListAsync();
+            // Paginação
+            var skip = (_page - 1) * _limit;
+
+            // Filtro de busca
+            var query = _context.PontosTuristicos.AsQueryable();
+
+            if (!string.IsNullOrEmpty(q))
+            {
+                query = query.Where(p => p.Nome.Contains(q));
+            }
+
+            // Paginação com filtro
+            var totalCount = await query.CountAsync();
+            var pontosTuristicos = await query
+                .Skip(skip)
+                .Take(_limit)
+                .ToListAsync();
+
+            var result = new
+            {
+                totalCount,
+                pontosTuristicos
+            };
+
+            return Ok(result);
         }
 
         // GET: api/pontosturisticos/{idPontoTuristico}

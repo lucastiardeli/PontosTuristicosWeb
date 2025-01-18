@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getMunicipios } from '../services/ibgeService';
+import '../styles/Combo.css';
 
 const ComboMunicipio = ({ uf, onMunicipioChange }) => {
     const [municipios, setMunicipios] = useState([]);
@@ -41,7 +42,7 @@ const ComboMunicipio = ({ uf, onMunicipioChange }) => {
     };
 
     return (
-        <div className="col-12">
+        <div className="col-10">
             <input type="text" className="form-control" id="municipio" name="municipio" value={inputMunicipio} onChange={handleInputChange} placeholder="Digite o município" />
             {filtrados.length > 0 && inputMunicipio && (
                 <ul className="suggestions">

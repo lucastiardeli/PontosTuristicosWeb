@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getEstados } from '../services/ibgeService';
+import '../styles/Combo.css';
 
 const ComboEstado = ({ onEstadoChange }) => {
     const [estados, setEstados] = useState([]);
@@ -19,7 +20,7 @@ const ComboEstado = ({ onEstadoChange }) => {
     }, []);
 
     return (
-        <div className="col-12">
+        <div className="col-1">
             <select
                 id="estado"
                 className="form-control"

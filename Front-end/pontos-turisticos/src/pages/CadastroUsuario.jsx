@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { useNavigate } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ComboEstado from '../componentes/ComboEstado';
-import ComboMunicipo from '../componentes/ComboMunicipio';
-import '../componentesCSS/ComboMunicipio.css';
+import ComboEstado from '../components/ComboEstado';
+import ComboMunicipo from '../components/ComboMunicipio';
 import { getTiposUsuarios, createUsuario } from '../services/apiService';
 
 class Cadastro extends Component {
@@ -77,7 +75,7 @@ class Cadastro extends Component {
 
         // Usando o serviço para criar o usuário
         createUsuario({
-            idTipoUsuario, nome, email, senha, dataNascimento, celular, cpf, estado: estadoSelecionado, cidade: municipioSelecionado, ativo, foto, inclusaoDataHora: new Date().toISOString()
+            idTipoUsuario, nome, email, senha, dataNascimento, celular, cpf, estado: estadoSelecionado, cidade: municipioSelecionado, foto, inclusaoDataHora: new Date().toISOString()
         })
             .then(response => {
                 console.log('Resposta da API:', response);
