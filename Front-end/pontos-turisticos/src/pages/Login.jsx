@@ -25,10 +25,11 @@ class Login extends Component {
         const { setUser } = this.props;
 
         try {
-            const { token, tipoUsuario, validade } = await apiService.login(email, password);
+            const { token, tipoUsuario, idUsuario, validade } = await apiService.login(email, password);
 
             localStorage.setItem("authToken", token);
             localStorage.setItem("tipoUsuario", tipoUsuario);
+            localStorage.setItem("idUsuario", idUsuario);
             localStorage.setItem("tokenExpiration", validade);
 
             setUser(tipoUsuario);
@@ -50,7 +51,7 @@ class Login extends Component {
         const { email, password, error } = this.state;
 
         return (
-            <div className='login-user container col-3'>
+            <div className='login-user container col-4'>
                 <form onSubmit={this.handleLogin}> {/* Usando onSubmit no formulário */}
                     <h1>LOGIN</h1>
 
@@ -65,7 +66,7 @@ class Login extends Component {
                     </div>
 
                     <div className="col-12">
-                        <button id='btnLogar' className="col-6" type="submit">Login</button>
+                        <button id='btnLogar' className="col-6" type="submit">Logar</button>
                         <button id="btnSemCadastro" className="col-6" onClick={() => this.props.navigate('/cadastro-usuario')} type="button">Não possuo cadastro</button>
                         {error && <p style={{ color: "red" }}>{error}</p>}
                     </div>

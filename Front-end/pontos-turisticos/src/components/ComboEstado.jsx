@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getEstados } from '../services/ibgeService';
 import '../styles/Combo.css';
 
-const ComboEstado = ({ onEstadoChange }) => {
+const ComboEstado = ({ onEstadoChange, estadoSelecionado }) => {
     const [estados, setEstados] = useState([]);
     const [erro, setErro] = useState(null);
 
@@ -21,7 +21,12 @@ const ComboEstado = ({ onEstadoChange }) => {
 
     return (
         <div className="form-group col-12">
-            <select id="estado" className="form-control" name="estado" onChange={(e) => onEstadoChange(e.target.value)}
+            <select
+                id="estado"
+                className="form-control"
+                name="estado"
+                onChange={(e) => onEstadoChange(e.target.value)}
+                value={estadoSelecionado} // Passa o valor selecionado
             >
                 <option value="">...</option>
                 {erro ? (

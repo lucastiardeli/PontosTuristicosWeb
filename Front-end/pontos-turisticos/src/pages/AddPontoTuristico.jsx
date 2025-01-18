@@ -26,14 +26,14 @@ class AddTourist extends Component {
         const { nome, descricao, referencia, estadoSelecionado, municipioSelecionado } = this.state;
 
         try {
-            const response = await apiService.createUsuario({
+            const response = await apiService.createPontoTuristico({
                 nome,
                 descricao,
                 referencia,
                 estado: estadoSelecionado,
                 cidade: municipioSelecionado,
                 inclusaoDataHora: new Date().toISOString(),
-                alteracaoDataHora: new Date().toISOString()
+                idUsuario: localStorage.getItem("idUsuario")
             });
 
             console.log('Resposta da API:', response);
@@ -87,8 +87,7 @@ class AddTourist extends Component {
                         </div>
 
                         <div className="col-lg-12">
-                            <button id="btnConfirmar" className="col-6" type="submit">Adicionar</button>
-                            <button id="btnCancelar" className="col-6" type="button">Cancelar</button>
+                            <button id="btnConfirmar" className="col-12" type="submit">Adicionar</button>
                         </div>
                     </form>
                 </div >

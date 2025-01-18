@@ -7,6 +7,7 @@ import Login from './pages/Login';
 //import PontosTuristicosAdmin from './componentes/PontosTuristicosAdmin';
 import Home from './pages/Home';
 import AddPontoTuristico from './pages/AddPontoTuristico';
+import PontosTuristicosUsuario from './pages/PontosTuristicosUsuario';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
   setUser = (user) => {
     this.setState({ user });
   };
+
   componentDidMount() {
     const dataExpiracao = localStorage.getItem('tokenExpiration');
 
@@ -33,6 +35,7 @@ class App extends Component {
       if (dataExpiracaoDate < dataAtual) {
         localStorage.removeItem('authToken');
         localStorage.removeItem('tipoUsuario');
+        localStorage.removeItem('idUsuario');
         localStorage.removeItem('tokenExpiration');
         this.setState({ user: null });
       } else {
@@ -47,13 +50,14 @@ class App extends Component {
 
     return (
       <Router>
-        <Header user={user} />
+        <Header user={user} setUser={this.setUser} />
         <div style={{ padding: '20px', background: '#0e355fbf', height: '25vh' }}>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/add-ponto-turistico' element={<AddPontoTuristico />} />
             <Route path='/login' element={<Login setUser={this.setUser} />} />
             <Route path='/cadastro-usuario' element={<CadastroUsuario />} />
+            <Route path='/my-ponto-turistico' element={<PontosTuristicosUsuario />} />
           </Routes>
         </div>
       </Router>

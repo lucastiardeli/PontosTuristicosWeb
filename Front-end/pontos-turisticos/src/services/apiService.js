@@ -2,8 +2,6 @@ import api from './api';
 
 const login = async (email, password) => {
   try {
-    console.log(email);
-    console.log(password);
     const response = await api.post('/Auth/login', {
       email,
       senha: password,
@@ -33,14 +31,41 @@ const getTiposUsuarios = async () => {
   }
 };
 
+const createPontoTuristico = async (pontoTuristicoData) => {
+  try {
+    const response = await api.post('/PontosTuristicos', pontoTuristicoData);
+    return response.data;
+  } catch (error) {
+    throw new Error('Erro ao cadastrar o Ponto Turístico', error);
+  }
+};
+
 const createUsuario = async (usuarioData) => {
-  console.log(usuarioData);
   try {
     const response = await api.post('/Usuarios', usuarioData);
     return response.data;
   } catch (error) {
-    console.log(usuarioData);
     throw new Error('Erro ao cadastrar usuário', error);
+  }
+};
+
+const updatePontoTuristico = async (idPontoTuristico, pontoTuristicoData) => {
+  console.log(idPontoTuristico);
+  console.log(pontoTuristicoData);
+  try {
+    const response = await api.put(`/PontosTuristicos/${idPontoTuristico}`, pontoTuristicoData);
+    return response.data;
+  } catch (error) {
+    throw new Error('Erro ao atualizar o ponto turístico', error);
+  }
+};
+
+const deletePontoTuristico = async (idPontoTuristico) => {
+  try {
+    const response = await api.delete(`/PontosTuristicos/${idPontoTuristico}`);
+    return response.data;
+  } catch (error) {
+    throw new Error('Erro ao excluir o ponto turístico', error);
   }
 };
 
@@ -53,14 +78,42 @@ const getPontosTuristicos = async (page = 1, limit = 5, search = '') => {
         q: search,
       },
     });
-    console.log('teste', response);
+    console.log('testee ', response);
     return response.data;
   } catch (err) {
     throw err.response?.data || 'Erro ao buscar pontos turísticos.';
   }
 };
 
-export { login, getUserData, getTiposUsuarios, createUsuario, getPontosTuristicos };
+const getPontosTuristicosUsuario = async (idUsuario, page = 1, limit = 5, search = '') => {
+  console.log(idUsuario);
+
+  try {
+    const response = await api.get(`/PontosTuristicos/usuario/${idUsuario}`, {
+      params: {
+        _page: page,
+        _limit: limit,
+        q: search,
+      },
+    });
+    console.log('Pontos turísticos do usuário:', response);
+    return response.data;
+  } catch (err) {
+    throw err.response?.data || 'Erro ao buscar pontos turísticos do usuário.';
+  }
+};
+
+export {
+  login,
+  getUserData,
+  getTiposUsuarios,
+  createUsuario,
+  getPontosTuristicos,
+  createPontoTuristico,
+  getPontosTuristicosUsuario,
+  updatePontoTuristico,
+  deletePontoTuristico,
+};
 // Export default como objeto
 export default {
   login,
@@ -68,4 +121,8 @@ export default {
   getTiposUsuarios,
   createUsuario,
   getPontosTuristicos,
+  createPontoTuristico,
+  getPontosTuristicosUsuario,
+  updatePontoTuristico,
+  deletePontoTuristico,
 };

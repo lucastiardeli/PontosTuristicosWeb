@@ -79,6 +79,7 @@ namespace PontosTuristicosAPI.Controllers
             {
                 Token = tokenString,
                 tipoUsuario = tipoUsuario.Descricao,
+                idUsuario = usuario.IdUsuario,
                 Validade = DateTime.UtcNow.AddHours(1)
             });
         }

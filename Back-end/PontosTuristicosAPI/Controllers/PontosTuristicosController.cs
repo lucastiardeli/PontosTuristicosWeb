@@ -51,6 +51,39 @@ namespace PontosTuristicosAPI.Controllers
             return Ok(result);
         }
 
+        // GET: api/pontosturisticos/usuario/{idUsuario}
+        [HttpGet("usuario/{idUsuario}")]
+        public async Task<IActionResult> GetPontosTuristicosPorUsuario(int idUsuario, [FromQuery] string q = "", [FromQuery] int _page = 1, [FromQuery] int _limit = 5)
+        {
+            // Paginação
+            var skip = (_page - 1) * _limit;
+
+            // Filtro de busca para os pontos turísticos do usuário
+            var query = _context.PontosTuristicos
+                .Where(p => p.IdUsuario == idUsuario)
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(q))
+            {
+                query = query.Where(p => p.Nome.Contains(q));
+            }
+
+            // Paginação com filtro
+            var totalCount = await query.CountAsync();
+            var pontosTuristicos = await query
+                .Skip(skip)
+                .Take(_limit)
+                .ToListAsync();
+
+            var result = new
+            {
+                totalCount,
+                pontosTuristicos
+            };
+
+            return Ok(result);
+        }
+
         // GET: api/pontosturisticos/{idPontoTuristico}
         [HttpGet("{idPontoTuristico}")]
         public async Task<ActionResult<PontoTuristico>> GetPontoTuristico(int idPontoTuristico)
