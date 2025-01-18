@@ -42,8 +42,8 @@ const ComboMunicipio = ({ uf, onMunicipioChange }) => {
     };
 
     return (
-        <div className="col-10">
-            <input type="text" className="form-control" id="municipio" name="municipio" value={inputMunicipio} onChange={handleInputChange} placeholder="Digite o município" />
+        <div className="col-12">
+            <input type="text" className="form-control" id="municipio" name="municipio" value={inputMunicipio} onChange={handleInputChange} placeholder="Digite a cidade" />
             {filtrados.length > 0 && inputMunicipio && (
                 <ul className="suggestions">
                     {filtrados.map((municipio) => (

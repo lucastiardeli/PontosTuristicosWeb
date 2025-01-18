@@ -62,30 +62,28 @@ class AddTourist extends Component {
                     <h1>Adicionar Ponto Turístico</h1>
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group col-12">
-                            <label className="col-2" htmlFor="nome">Nome</label>
-                            <input className="col-10" type="text" name="nome" placeholder="Nome" value={nome} onChange={this.handleChange} />
+                            <label className="col-12 form-label required" htmlFor="nome">Nome</label>
+                            <input className="col-12 form-control" type="text" name="nome" placeholder="Nome" value={nome} onChange={this.handleChange} />
                         </div>
 
-                        <div className="col-12">
-                            <div className="row">
-                                <label className="col-2" htmlFor="uf/cidade" required>UF/Cidade</label>
-                                <div className="col-10">
-                                    <div className='row'>
-                                        <ComboEstado onEstadoChange={this.handleEstadoChange} />
-                                        <ComboMunicipo uf={estadoSelecionado} onMunicipioChange={this.handleMunicipioChange} />
-                                    </div>
+                        <div className="form-group col-12">
+                            <label className="col-12 form-label required" htmlFor="uf/cidade">UF/Cidade</label>
+                            <div className="col-12">
+                                <div class='row'>
+                                    <ComboEstado onEstadoChange={this.handleEstadoChange} />
+                                    <ComboMunicipo uf={estadoSelecionado} onMunicipioChange={this.handleMunicipioChange} />
                                 </div>
                             </div>
                         </div>
 
                         <div className="form-group col-12">
-                            <label className="col-2" htmlFor="referencia">Referência</label>
-                            <input className="col-10" type="text" name="referencia" placeholder="Referência" value={referencia} onChange={this.handleChange} />
+                            <label className="col-12" htmlFor="referencia">Referência</label>
+                            <input className="col-12" type="text" name="referencia" placeholder="Referência" value={referencia} onChange={this.handleChange} />
                         </div>
 
                         <div className="form-group col-12">
-                            <label className="col-2" htmlFor="descricao">Descrição</label>
-                            <textarea className="col-10" name="descricao" placeholder="Descrição" value={descricao} onChange={this.handleChange} />
+                            <label className="col-12 form-label required" htmlFor="descricao">Descrição</label>
+                            <textarea className="col-12 form-control" name="descricao" placeholder="Descrição" value={descricao} onChange={this.handleChange} />
                         </div>
 
                         <div className="col-lg-12">
@@ -93,8 +91,8 @@ class AddTourist extends Component {
                             <button id="btnCancelar" className="col-6" type="button">Cancelar</button>
                         </div>
                     </form>
-                </div>
-            </div>
+                </div >
+            </div >
         );
     }
 }

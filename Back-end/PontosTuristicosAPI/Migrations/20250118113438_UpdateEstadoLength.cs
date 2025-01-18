@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PontosTuristicosAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class Inicial : Migration
+    public partial class UpdateEstadoLength : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -36,8 +36,8 @@ namespace PontosTuristicosAPI.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Estado = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: false),
-                    Cidade = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: false),
-                    Referencia = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    Cidade = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Referencia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Descricao = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Ativo = table.Column<bool>(type: "bit", nullable: false),
                     InclusaoDataHora = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -107,11 +107,11 @@ namespace PontosTuristicosAPI.Migrations
                 columns: new[] { "IdCriterioAvaliacao", "Descricao", "InclusaoDataHora", "Valor" },
                 values: new object[,]
                 {
-                    { 1, "Muito ruim", new DateTime(2025, 1, 17, 19, 49, 36, 455, DateTimeKind.Local).AddTicks(2225), 1 },
-                    { 2, "Ruim", new DateTime(2025, 1, 17, 19, 49, 36, 455, DateTimeKind.Local).AddTicks(2226), 2 },
-                    { 3, "Médio", new DateTime(2025, 1, 17, 19, 49, 36, 455, DateTimeKind.Local).AddTicks(2227), 3 },
-                    { 4, "Bom", new DateTime(2025, 1, 17, 19, 49, 36, 455, DateTimeKind.Local).AddTicks(2228), 4 },
-                    { 5, "Muito bom", new DateTime(2025, 1, 17, 19, 49, 36, 455, DateTimeKind.Local).AddTicks(2229), 5 }
+                    { 1, "Muito ruim", new DateTime(2025, 1, 18, 8, 34, 38, 382, DateTimeKind.Local).AddTicks(5819), 1 },
+                    { 2, "Ruim", new DateTime(2025, 1, 18, 8, 34, 38, 382, DateTimeKind.Local).AddTicks(5820), 2 },
+                    { 3, "Médio", new DateTime(2025, 1, 18, 8, 34, 38, 382, DateTimeKind.Local).AddTicks(5821), 3 },
+                    { 4, "Bom", new DateTime(2025, 1, 18, 8, 34, 38, 382, DateTimeKind.Local).AddTicks(5822), 4 },
+                    { 5, "Muito bom", new DateTime(2025, 1, 18, 8, 34, 38, 382, DateTimeKind.Local).AddTicks(5823), 5 }
                 });
 
             migrationBuilder.InsertData(
@@ -119,14 +119,14 @@ namespace PontosTuristicosAPI.Migrations
                 columns: new[] { "IdTipoUsuario", "Descricao", "InclusaoDataHora" },
                 values: new object[,]
                 {
-                    { 1, "Guia", new DateTime(2025, 1, 17, 19, 49, 36, 455, DateTimeKind.Local).AddTicks(2097) },
-                    { 2, "Visitante", new DateTime(2025, 1, 17, 19, 49, 36, 455, DateTimeKind.Local).AddTicks(2110) }
+                    { 1, "Guia", new DateTime(2025, 1, 18, 8, 34, 38, 382, DateTimeKind.Local).AddTicks(5690) },
+                    { 2, "Visitante", new DateTime(2025, 1, 18, 8, 34, 38, 382, DateTimeKind.Local).AddTicks(5706) }
                 });
 
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "IdUsuario", "CPF", "Celular", "Cidade", "DataNascimento", "Email", "Estado", "Foto", "IdTipoUsuario", "InclusaoDataHora", "Nome", "Senha" },
-                values: new object[] { 1, "51954386842", "14997646017", "Tupã", new DateTime(2002, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", "SP", null, 1, new DateTime(2025, 1, 17, 19, 49, 36, 455, DateTimeKind.Local).AddTicks(2963), "admin", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918" });
+                values: new object[] { 1, "51954386842", "14997646017", "Tupã", new DateTime(2002, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", "SP", null, 1, new DateTime(2025, 1, 18, 8, 34, 38, 382, DateTimeKind.Local).AddTicks(6536), "admin", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918" });
         }
 
         /// <inheritdoc />

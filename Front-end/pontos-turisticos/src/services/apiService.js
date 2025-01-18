@@ -2,6 +2,8 @@ import api from './api';
 
 const login = async (email, password) => {
   try {
+    console.log(email);
+    console.log(password);
     const response = await api.post('/Auth/login', {
       email,
       senha: password,
@@ -27,16 +29,18 @@ const getTiposUsuarios = async () => {
     const response = await api.get('/TiposUsuarios');
     return response.data;
   } catch (error) {
-    throw new Error('Erro ao buscar os tipos de usuários');
+    throw new Error('Erro ao buscar os tipos de usuários', error);
   }
 };
 
 const createUsuario = async (usuarioData) => {
+  console.log(usuarioData);
   try {
     const response = await api.post('/Usuarios', usuarioData);
     return response.data;
   } catch (error) {
-    throw new Error('Erro ao cadastrar usuário');
+    console.log(usuarioData);
+    throw new Error('Erro ao cadastrar usuário', error);
   }
 };
 

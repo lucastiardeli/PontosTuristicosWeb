@@ -20,12 +20,8 @@ const ComboEstado = ({ onEstadoChange }) => {
     }, []);
 
     return (
-        <div className="col-1">
-            <select
-                id="estado"
-                className="form-control"
-                name="estado"
-                onChange={(e) => onEstadoChange(e.target.value)}
+        <div className="form-group col-12">
+            <select id="estado" className="form-control" name="estado" onChange={(e) => onEstadoChange(e.target.value)}
             >
                 <option value="">...</option>
                 {erro ? (

@@ -1,21 +1,25 @@
-.add-tourist {
+.add-user {
     padding: 20px;
 }
 
-.add-tourist form {
+.add-user form {
     background-color: white;
     padding: 20px;
 }
 
-.add-tourist label {
+.add-user label {
     color: rgba(104,104,103,255);
     font-weight: bold;
 
 }
 
-.add-tourist input,
-.add-tourist textarea,
-.add-tourist select {
+.add-user h1 {
+    text-align: center;
+}
+
+.add-user input,
+.add-user textarea,
+.add-user select {
     margin-bottom: 10px;
     padding: 5px;
     border: 1px solid #ccc;
@@ -24,7 +28,7 @@
     margin-left: 0px;
 }
 
-.add-tourist button {
+.add-user button {
     font-weight: bold;
     color: white;
     border: none;
@@ -35,7 +39,7 @@
     background: #0e355f;
 }
 
-#btnCancelar {
+#btnTenhLogin {
     background: #a0a0a3cc;
 }
 

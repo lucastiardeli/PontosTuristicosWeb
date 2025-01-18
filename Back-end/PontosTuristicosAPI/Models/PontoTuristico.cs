@@ -18,10 +18,10 @@ namespace PontosTuristicosAPI.Models
         [Required, StringLength(2)]
         public string Estado { get; set; } = string.Empty;
 
-        [Required, StringLength(2)]
+        [Required, StringLength(30)]
         public string Cidade { get; set; } = string.Empty;
 
-        [StringLength(100)]
+        [StringLength(50)]
         public string? Referencia { get; set; }
 
         [Required, StringLength(100)]

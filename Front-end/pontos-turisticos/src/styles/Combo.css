@@ -6,7 +6,7 @@
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%;
+    width: 25%;
     max-height: 150px; /* Define a altura máxima */
     overflow-y: auto; /* Adiciona barra de rolagem se necessário */
     z-index: 1000; /* Garante que a lista fique sobre outros elementos */
@@ -20,3 +20,4 @@
 .suggestions li:hover {
     background-color: #f0f0f0;
 }
+

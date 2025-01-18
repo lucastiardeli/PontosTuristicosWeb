@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { useNavigate } from 'react-router-dom';  // Se estiver usando React Router v6
 import apiService from '../services/apiService';  // Importando o apiService
+import '../styles/Login.css'
 
 class Login extends Component {
     constructor(props) {
@@ -17,7 +18,9 @@ class Login extends Component {
         this.setState({ [name]: value });
     };
 
-    handleLogin = async () => {
+    handleLogin = async (event) => {
+        event.preventDefault(); // Impede o comportamento padrão de envio do formulário
+
         const { email, password } = this.state;
         const { setUser } = this.props;
 
@@ -32,9 +35,9 @@ class Login extends Component {
 
             // Redirecionar o usuário com base no tipo de usuário
             if (tipoUsuario === "guia") {
-                this.props.navigate("/add");  // Redireciona para admin
+                this.props.navigate("/add");
             } else {
-                this.props.navigate("/");  // Redireciona para pontos turísticos
+                this.props.navigate("/");
             }
         } catch (err) {
             this.setState({
@@ -47,15 +50,35 @@ class Login extends Component {
         const { email, password, error } = this.state;
 
         return (
-            <div>
-                <h2>Login</h2>
-                <input type="text" name="email" placeholder="E-mail" value={email} onChange={this.handleInputChange} />
-                <input type="password" name="password" placeholder="Senha" value={password} onChange={this.handleInputChange} />
-                <button onClick={this.handleLogin}>Login</button>
-                {error && <p style={{ color: "red" }}>{error}</p>}
+            <div className='login-user container col-3'>
+                <form onSubmit={this.handleLogin}> {/* Usando onSubmit no formulário */}
+                    <h1>LOGIN</h1>
+
+                    <div className="mb-3 col-12">
+                        <label htmlFor="email" className="form-label required">E-mail</label>
+                        <input className='form-control' type="text" name="email" placeholder="E-mail" value={email} onChange={this.handleInputChange} />
+                    </div>
+
+                    <div className="mb-3 col-12">
+                        <label htmlFor="password" className="form-label required">Senha</label>
+                        <input className='form-control' type="password" name="password" placeholder="Senha" value={password} onChange={this.handleInputChange} />
+                    </div>
+
+                    <div className="col-12">
+                        <button id='btnLogar' className="col-6" type="submit">Login</button>
+                        <button id="btnSemCadastro" className="col-6" onClick={() => this.props.navigate('/cadastro-usuario')} type="button">Não possuo cadastro</button>
+                        {error && <p style={{ color: "red" }}>{error}</p>}
+                    </div>
+
+                </form>
             </div>
         );
     }
 }
 
-export default Login;
+function LoginWrapper(props) {
+    const navigate = useNavigate();
+    return <Login {...props} navigate={navigate} />;
+}
+
+export default LoginWrapper;

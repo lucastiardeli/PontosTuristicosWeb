@@ -1,21 +1,25 @@
-.add-tourist {
+.login-user {
     padding: 20px;
 }
 
-.add-tourist form {
+.login-user form {
     background-color: white;
     padding: 20px;
+    margin-top: 15%;
 }
 
-.add-tourist label {
+.login-user label {
     color: rgba(104,104,103,255);
     font-weight: bold;
-
 }
 
-.add-tourist input,
-.add-tourist textarea,
-.add-tourist select {
+.login-user h1 {
+    text-align: center;
+}
+
+.login-user input,
+.login-user textarea,
+.login-user select {
     margin-bottom: 10px;
     padding: 5px;
     border: 1px solid #ccc;
@@ -24,18 +28,18 @@
     margin-left: 0px;
 }
 
-.add-tourist button {
+.login-user button {
     font-weight: bold;
     color: white;
     border: none;
     padding: 5px;
 }
 
-#btnConfirmar {
+#btnLogar {
     background: #0e355f;
 }
 
-#btnCancelar {
+#btnSemCadastro {
     background: #a0a0a3cc;
 }
 
@@ -46,4 +50,10 @@
 .required::after {
     content: ' *';
     color: red;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
