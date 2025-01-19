@@ -2,24 +2,24 @@ import React, { Component } from 'react';
 import apiService from '../services/apiService';
 import CardPontoTuristico from '../components/CardPontoTuristico';
 import '../styles/Home.css';
+import ModalDetalhesPonto from '../components/ModalDetalhesPonto';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tourists: [],           // Lista de pontos turísticos
-            search: '',             // Termo de busca
-            currentPage: 1,         // Página atual
-            totalPages: 1,          // Total de páginas
-            limit: 5,               // Limite de pontos turísticos por página
-            hasSearched: false,     // Flag para verificar se a busca foi realizada
+            tourists: [],
+            search: '',
+            currentPage: 1,
+            totalPages: 1,
+            limit: 5,
+            hasSearched: false,
+            showModal: false, // Controle do modal
+            selectedTourist: null, // Dados do ponto turístico selecionado
         };
     }
 
-    // Não realizar busca no componentDidMount
-    componentDidMount() {
-        // Não chamar a fetchTourists aqui, pois queremos esperar o clique no botão
-    }
+    componentDidMount() { }
 
     fetchTourists = async () => {
         const { currentPage, limit, search } = this.state;
@@ -28,11 +28,10 @@ class Home extends Component {
             const response = await apiService.getPontosTuristicos(currentPage, limit, search);
             const { pontosTuristicos, totalCount } = response;
 
-            console.log('response teste ', response);
             this.setState({
                 tourists: pontosTuristicos,
                 totalPages: Math.ceil(totalCount / limit),
-                hasSearched: true, // Marca que a busca foi realizada
+                hasSearched: true,
             });
         } catch (error) {
             console.error('Erro ao buscar pontos turísticos:', error);
@@ -42,7 +41,6 @@ class Home extends Component {
     handleSearchChange = (e) => {
         const searchValue = e.target.value;
         this.setState({ search: searchValue }, () => {
-            // Se o campo de busca estiver vazio, não exibe os pontos turísticos
             if (searchValue === '') {
                 this.setState({ tourists: [], hasSearched: false });
             }
@@ -50,12 +48,12 @@ class Home extends Component {
     };
 
     handleSearchClick = () => {
-        this.setState({ currentPage: 1, hasSearched: false }, this.fetchTourists); // Reinicia a busca e flag
+        this.setState({ currentPage: 1, hasSearched: false }, this.fetchTourists);
     };
 
     handleKeyPress = (e) => {
         if (e.key === 'Enter') {
-            this.handleSearchClick(); // Realiza a busca ao pressionar Enter
+            this.handleSearchClick();
         }
     };
 
@@ -63,57 +61,62 @@ class Home extends Component {
         this.setState({ currentPage: newPage }, this.fetchTourists);
     };
 
+    openModal = (tourist) => {
+        this.setState({ showModal: true, selectedTourist: tourist });
+    };
+
+    closeModal = () => {
+        this.setState({ showModal: false, selectedTourist: null });
+    };
+
     render() {
-        const { tourists, search, currentPage, totalPages, hasSearched } = this.state;
+        const { tourists, search, currentPage, totalPages, hasSearched, showModal, selectedTourist } = this.state;
 
         return (
             <div className="container">
-                <div className="home">
-                    <div className="offset-3 col-4">
-                        <h1>Pontos Turísticos</h1>
+                <div className="home col-12">
+                    <div className="busca offset-3 col-9">
                         <div className='row'>
-                            <input type="text" placeholder="Digite para buscar..." value={search} onChange={this.handleSearchChange} onKeyPress={this.handleKeyPress} className="form-control search-input col-10" />
-                            <button onClick={this.handleSearchClick} className="btn btn-primary mt-2 col-2">Buscar</button>
+                            <div className='col-6'>
+                                <input className="form-control search-input col-12" type="text" placeholder="Digite para buscar..." value={search} onChange={this.handleSearchChange} onKeyPress={this.handleKeyPress} />
+                            </div>
+                            <div className='col-2'>
+                                <button onClick={this.handleSearchClick} className="col-12">Buscar</button>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Renderiza os pontos turísticos após a busca */}
                     {hasSearched && (
                         <div className="row offset-3 col-6 mt-5">
                             {Array.isArray(tourists) && tourists.length > 0 ? (
                                 tourists.map((tourist) => (
-                                    <CardPontoTuristico key={tourist.id} tourist={tourist} />
+                                    <CardPontoTuristico key={tourist.id} tourist={tourist} verDetalhes={this.openModal} />
                                 ))
                             ) : (
                                 <p>Nenhum ponto turístico encontrado.</p>
                             )}
 
-                            {/* Renderização condicional da paginação */}
                             {tourists.length > 0 && (
                                 <div className="pagination">
                                     <div className="col-2">
-                                        <button
-                                            disabled={currentPage === 1}
-                                            onClick={() => this.handlePageChange(currentPage - 1)}
-                                        >
-                                            Anterior
+                                        <button disabled={currentPage === 1} onClick={() => this.handlePageChange(currentPage - 1)}>
+                                            Voltar
                                         </button>
                                     </div>
                                     <div className="col-10 text-center pt-2">
                                         <span> Página {currentPage} de {totalPages} </span>
                                     </div>
                                     <div className="col-2">
-                                        <button
-                                            disabled={currentPage === totalPages || totalPages === 0}
-                                            onClick={() => this.handlePageChange(currentPage + 1)}
-                                        >
-                                            Próxima
+                                        <button disabled={currentPage === totalPages || totalPages === 0} onClick={() => this.handlePageChange(currentPage + 1)}>
+                                            Avançar
                                         </button>
                                     </div>
                                 </div>
                             )}
                         </div>
                     )}
+
+                    {selectedTourist && (<ModalDetalhesPonto showModal={showModal} hideModel={this.closeModal} pontoData={selectedTourist} />)}
                 </div>
             </div>
         );

@@ -27,6 +27,8 @@ namespace PontosTuristicosAPI.Models
         [Required, StringLength(100)]
         public string Descricao { get; set; } = string.Empty;
 
+        public string? Foto { get; set; }
+
         [Required]
         public DateTime InclusaoDataHora { get; set; }
 

@@ -29,9 +29,6 @@ class App extends Component {
       const dataExpiracaoDate = new Date(dataExpiracao);
       const dataAtual = new Date();
 
-      console.log(dataExpiracaoDate);
-      console.log(dataAtual);
-
       if (dataExpiracaoDate < dataAtual) {
         localStorage.removeItem('authToken');
         localStorage.removeItem('tipoUsuario');
@@ -39,8 +36,7 @@ class App extends Component {
         localStorage.removeItem('tokenExpiration');
         this.setState({ user: null });
       } else {
-        const tipoUsuario = localStorage.getItem('tipoUsuario');
-        this.setState({ user: tipoUsuario });
+        this.setState({ user: localStorage.getItem('tipoUsuario') });
       }
     }
   }

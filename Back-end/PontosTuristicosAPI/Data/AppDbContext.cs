@@ -14,17 +14,17 @@ namespace PontosTuristicosAPI.Data
 
         public DbSet<PontoTuristico> PontosTuristicos { get; set; }
 
-        public DbSet<PontoTuristicoAvaliacao> PontosTuristicosAvaliacoes { get; set; }
-
         public DbSet<TipoUsuario> TiposUsuarios { get; set; }
 
         public DbSet<Usuario> Usuarios { get; set; }
 
-        public DbSet<CriterioAvaliacao> CriteriosAvaliacoes { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<PontoTuristico>()
+                        .Property(p => p.Foto)
+                        .HasColumnType("VarChar(MAX)");
             Alimentar(modelBuilder);
         }
 
@@ -42,46 +42,6 @@ namespace PontosTuristicosAPI.Data
                 {
                     IdTipoUsuario = 2,
                     Descricao = "Visitante",
-                    InclusaoDataHora = DateTime.Now
-                }
-
-            );
-
-            modelBuilder.Entity<CriterioAvaliacao>().HasData(
-
-                new CriterioAvaliacao
-                {
-                    IdCriterioAvaliacao = 1,
-                    Descricao = "Muito ruim",
-                    Valor = 1,
-                    InclusaoDataHora = DateTime.Now
-                },
-                new CriterioAvaliacao
-                {
-                    IdCriterioAvaliacao = 2,
-                    Descricao = "Ruim",
-                    Valor = 2,
-                    InclusaoDataHora = DateTime.Now
-                },
-                new CriterioAvaliacao
-                {
-                    IdCriterioAvaliacao = 3,
-                    Descricao = "Médio",
-                    Valor = 3,
-                    InclusaoDataHora = DateTime.Now
-                },
-                new CriterioAvaliacao
-                {
-                    IdCriterioAvaliacao = 4,
-                    Descricao = "Bom",
-                    Valor = 4,
-                    InclusaoDataHora = DateTime.Now
-                },
-                new CriterioAvaliacao
-                {
-                    IdCriterioAvaliacao = 5,
-                    Descricao = "Muito bom",
-                    Valor = 5,
                     InclusaoDataHora = DateTime.Now
                 }
 

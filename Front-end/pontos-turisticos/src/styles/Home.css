@@ -4,7 +4,13 @@
     margin-top: 20px;
 }
 
-.pagination button {
+.search-input {
+    border: 1px solid #ccc !important;
+    border-radius: 2px !important;
+    font-size: 1em !important;
+}
+
+button {
     padding: 5px 10px;
     margin: 0 10px;
     cursor: pointer;
@@ -19,4 +25,6 @@
     background-color: #ccc;
 }
 
-
+.busca {
+    margin-top: 15vh;
+}

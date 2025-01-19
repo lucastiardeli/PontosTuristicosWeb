@@ -39,9 +39,6 @@ namespace PontosTuristicosAPI.Models
         [Required, StringLength(40)]
         public string Cidade { get; set; } = string.Empty;
 
-        [StringLength(50)]
-        public string? Foto { get; set; }
-
         [Required]
         public DateTime InclusaoDataHora { get; set; }
     }

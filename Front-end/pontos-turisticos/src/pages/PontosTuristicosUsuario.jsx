@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import apiService from '../services/apiService';
 import ModalEditarPonto from '../components/ModalEditarPonto';
+import '../styles/PontosTuristicosUsuario.css'
 
 class PontosTuristicosUsuario extends Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class PontosTuristicosUsuario extends Component {
             error: null,
             page: 1,
             totalPages: 1,
+            limit: 10,
             search: '',
             showModal: false,
             pontoEdit: null,
@@ -26,13 +28,13 @@ class PontosTuristicosUsuario extends Component {
     }
 
     fetchPontosTuristicos = async (idUsuario) => {
-        const { page, search } = this.state;
+        const { page, limit, search } = this.state;
 
         try {
-            const response = await apiService.getPontosTuristicosUsuario(idUsuario, page, 5, search);
+            const response = await apiService.getPontosTuristicosUsuario(idUsuario, page, limit, search);
             this.setState({
                 pontos: response.pontosTuristicos,
-                totalPages: Math.ceil(response.totalCount / 5),
+                totalPages: Math.ceil(response.totalCount / limit),
             });
         } catch (error) {
             this.setState({ error: 'Erro ao buscar pontos turísticos.' });
@@ -111,62 +113,45 @@ class PontosTuristicosUsuario extends Component {
     render() {
         const { pontos, error, page, totalPages, search, showModal, pontoEdit } = this.state;
 
-        if (error) {
-            return <p style={{ color: 'red' }}>{error}</p>;
-        }
+        if (error) return <p style={{ color: 'red' }}>{error}</p>;
 
         return (
             <div className="container">
+
                 <h1>Meus Pontos Turísticos</h1>
 
-                <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Buscar ponto turístico"
-                    value={search}
-                    onChange={this.handleSearchChange}
-                />
+                <input type="text" className="form-control" placeholder="Buscar ponto turístico" value={search} onChange={this.handleSearchChange} />
 
                 {pontos.length > 0 ? (
                     <>
                         <table className="table mt-3">
                             <thead>
                                 <tr>
-                                    <th>Nome</th>
-                                    <th>Descrição</th>
                                     <th>Imagem</th>
+                                    <th>Nome</th>
+                                    <th>Referência</th>
+                                    <th>Descrição</th>
                                     <th>Estado</th>
                                     <th>Cidade</th>
-                                    <th>Referência</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {pontos.map((ponto) => (
                                     <tr key={ponto.id}>
-                                        <td>{ponto.nome}</td>
-                                        <td>{ponto.descricao}</td>
                                         <td>
-                                            <img
-                                                src={ponto.imagemUrl || 'default-image.jpg'}
-                                                alt={ponto.nome}
-                                                width="100"
-                                            />
+                                            <img src={`http://localhost:5117/imagens/${ponto.foto}`} alt='SEM IMAGEM' width="75" />
                                         </td>
-                                        <td>{ponto.estado}</td> {/* Exibindo o Estado */}
-                                        <td>{ponto.cidade}</td> {/* Exibindo a Cidade */}
-                                        <td>{ponto.referencia}</td> {/* Exibindo a Referência */}
+                                        <td>{ponto.nome}</td>
+                                        <td>{ponto.referencia}</td>
+                                        <td>{ponto.descricao}</td>
+                                        <td>{ponto.estado}</td>
+                                        <td>{ponto.cidade}</td>
                                         <td>
-                                            <button
-                                                onClick={() => this.handleEdit(ponto.idPontoTuristico)}
-                                                className="btn btn-warning"
-                                            >
+                                            <button onClick={() => this.handleEdit(ponto.idPontoTuristico)} id="btnEditar">
                                                 Editar
                                             </button>
-                                            <button
-                                                onClick={() => this.handleDelete(ponto.idPontoTuristico)}
-                                                className="btn btn-danger ml-2"
-                                            >
+                                            <button onClick={() => this.handleDelete(ponto.idPontoTuristico)} id="btnExcluir">
                                                 Excluir
                                             </button>
                                         </td>
@@ -175,39 +160,14 @@ class PontosTuristicosUsuario extends Component {
                             </tbody>
                         </table>
 
-                        {/* Paginação */}
-                        <div className="d-flex justify-content-between">
-                            <button
-                                className="btn btn-secondary"
-                                onClick={() => this.handlePageChange(page - 1)}
-                                disabled={page === 1}
-                            >
-                                Anterior
-                            </button>
-                            <span>
-                                Página {page} de {totalPages}
-                            </span>
-                            <button
-                                className="btn btn-secondary"
-                                onClick={() => this.handlePageChange(page + 1)}
-                                disabled={page === totalPages}
-                            >
-                                Próxima
-                            </button>
+                        <div className="pagination d-flex justify-content-between">
+                            <button onClick={() => this.handlePageChange(page - 1)} disabled={page === 1}>Voltar</button>
+                            <span className='pt-2'> Página {page} de {totalPages} </span>
+                            <button onClick={() => this.handlePageChange(page + 1)} disabled={page === totalPages}>Avançar</button>
                         </div>
 
-                        {/* Modal para editar ponto turístico */}
-                        <ModalEditarPonto
-                            showModal={showModal}
-                            pontoEdit={pontoEdit}
-                            handleInputChange={this.handleInputChange}
-                            handleSaveEdit={this.handleSaveEdit}
-                            handleCloseModal={this.handleCloseModal}
-                        />
-                    </>
-                ) : (
-                    <p>Você ainda não cadastrou nenhum ponto turístico.</p>
-                )}
+                        <ModalEditarPonto showModal={showModal} pontoEdit={pontoEdit} handleInputChange={this.handleInputChange} handleSaveEdit={this.handleSaveEdit} handleCloseModal={this.handleCloseModal} />
+                    </>) : (<p>Você ainda não cadastrou nenhum ponto turístico.</p>)}
             </div>
         );
     }

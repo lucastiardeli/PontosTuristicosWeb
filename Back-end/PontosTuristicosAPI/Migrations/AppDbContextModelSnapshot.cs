@@ -50,35 +50,35 @@ namespace PontosTuristicosAPI.Migrations
                         {
                             IdCriterioAvaliacao = 1,
                             Descricao = "Muito ruim",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 16, 23, 24, 398, DateTimeKind.Local).AddTicks(1017),
+                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8794),
                             Valor = 1
                         },
                         new
                         {
                             IdCriterioAvaliacao = 2,
                             Descricao = "Ruim",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 16, 23, 24, 398, DateTimeKind.Local).AddTicks(1018),
+                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8795),
                             Valor = 2
                         },
                         new
                         {
                             IdCriterioAvaliacao = 3,
                             Descricao = "Médio",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 16, 23, 24, 398, DateTimeKind.Local).AddTicks(1019),
+                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8796),
                             Valor = 3
                         },
                         new
                         {
                             IdCriterioAvaliacao = 4,
                             Descricao = "Bom",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 16, 23, 24, 398, DateTimeKind.Local).AddTicks(1020),
+                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8797),
                             Valor = 4
                         },
                         new
                         {
                             IdCriterioAvaliacao = 5,
                             Descricao = "Muito bom",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 16, 23, 24, 398, DateTimeKind.Local).AddTicks(1021),
+                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8798),
                             Valor = 5
                         });
                 });
@@ -105,6 +105,9 @@ namespace PontosTuristicosAPI.Migrations
                         .IsRequired()
                         .HasMaxLength(2)
                         .HasColumnType("nvarchar(2)");
+
+                    b.Property<string>("Foto")
+                        .HasColumnType("VarChar(MAX)");
 
                     b.Property<int>("IdUsuario")
                         .HasColumnType("int");
@@ -181,13 +184,13 @@ namespace PontosTuristicosAPI.Migrations
                         {
                             IdTipoUsuario = 1,
                             Descricao = "Guia",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 16, 23, 24, 398, DateTimeKind.Local).AddTicks(890)
+                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8683)
                         },
                         new
                         {
                             IdTipoUsuario = 2,
                             Descricao = "Visitante",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 16, 23, 24, 398, DateTimeKind.Local).AddTicks(901)
+                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8693)
                         });
                 });
 
@@ -227,10 +230,6 @@ namespace PontosTuristicosAPI.Migrations
                         .HasMaxLength(2)
                         .HasColumnType("nvarchar(2)");
 
-                    b.Property<string>("Foto")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<int>("IdTipoUsuario")
                         .HasColumnType("int");
 
@@ -262,7 +261,7 @@ namespace PontosTuristicosAPI.Migrations
                             Email = "admin@gmail.com",
                             Estado = "SP",
                             IdTipoUsuario = 1,
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 16, 23, 24, 398, DateTimeKind.Local).AddTicks(1697),
+                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(9461),
                             Nome = "admin",
                             Senha = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
                         });

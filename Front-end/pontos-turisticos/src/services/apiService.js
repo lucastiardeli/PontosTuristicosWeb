@@ -32,6 +32,7 @@ const getTiposUsuarios = async () => {
 };
 
 const createPontoTuristico = async (pontoTuristicoData) => {
+  console.log('pontoTuristicoData ', pontoTuristicoData);
   try {
     const response = await api.post('/PontosTuristicos', pontoTuristicoData);
     return response.data;

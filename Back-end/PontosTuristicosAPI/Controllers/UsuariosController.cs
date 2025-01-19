@@ -77,7 +77,6 @@ namespace PontosTuristicosAPI.Controllers
             usuarioAtualizar.CPF = usuario.CPF;
             usuarioAtualizar.Estado = usuario.Estado;
             usuarioAtualizar.Cidade = usuario.Cidade;
-            usuarioAtualizar.Foto = usuario.Foto;
             usuarioAtualizar.Senha = usuario.Senha;
 
             // Salvando as alterações no banco

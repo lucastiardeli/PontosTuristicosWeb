@@ -15,27 +15,18 @@ const ComboEstado = ({ onEstadoChange, estadoSelecionado }) => {
                 setErro('Erro ao carregar os estados');
             }
         };
-
         fetchEstados();
     }, []);
 
     return (
         <div className="form-group col-12">
-            <select
-                id="estado"
-                className="form-control"
-                name="estado"
-                onChange={(e) => onEstadoChange(e.target.value)}
-                value={estadoSelecionado} // Passa o valor selecionado
-            >
+            <select id="estado" className="form-control" name="estado" onChange={(e) => onEstadoChange(e.target.value)} value={estadoSelecionado}>
                 <option value="">...</option>
                 {erro ? (
                     <option value="">{erro}</option>
                 ) : (
                     estados.map((estado) => (
-                        <option key={estado.id} value={estado.sigla}>
-                            {estado.sigla}
-                        </option>
+                        <option key={estado.id} value={estado.sigla}> {estado.sigla} </option>
                     ))
                 )}
             </select>

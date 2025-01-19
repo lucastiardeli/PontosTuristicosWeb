@@ -139,3 +139,4 @@ C:\Users\motia\OneDrive\Área de Trabalho\sinqia teste\PontosTuristicosWeb\Back-
 C:\Users\motia\OneDrive\Área de Trabalho\sinqia teste\PontosTuristicosWeb\Back-end\PontosTuristicosAPI\obj\Debug\net8.0\PontosTuristicosAPI.pdb
 C:\Users\motia\OneDrive\Área de Trabalho\sinqia teste\PontosTuristicosWeb\Back-end\PontosTuristicosAPI\obj\Debug\net8.0\PontosTuristicosAPI.genruntimeconfig.cache
 C:\Users\motia\OneDrive\Área de Trabalho\sinqia teste\PontosTuristicosWeb\Back-end\PontosTuristicosAPI\obj\Debug\net8.0\ref\PontosTuristicosAPI.dll
+C:\Users\motia\OneDrive\Área de Trabalho\sinqia teste\PontosTuristicosWeb\Back-end\PontosTuristicosAPI\bin\Debug\net8.0\PontosTuristicosAPI.staticwebassets.runtime.json

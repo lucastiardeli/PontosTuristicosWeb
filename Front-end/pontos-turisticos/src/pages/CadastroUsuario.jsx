@@ -19,7 +19,6 @@ class Cadastro extends Component {
             cpf: '',
             estadoSelecionado: '',
             municipioSelecionado: '',
-            foto: null,
             idTipoUsuario: '',
             tiposUsuarios: [],
             errors: {}
@@ -41,10 +40,6 @@ class Cadastro extends Component {
         this.setState({ [name]: value });
     };
 
-    handleFileChange = (e) => {
-        this.setState({ foto: e.target.files[0] });
-    };
-
     handleEstadoChange = (uf) => {
         this.setState({ estadoSelecionado: uf, municipioSelecionado: '' });
     };
@@ -56,7 +51,7 @@ class Cadastro extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        const { idTipoUsuario, nome, email, senha, confirmarSenha, dataNascimento, celular, cpf, estadoSelecionado, municipioSelecionado, foto } = this.state;
+        const { idTipoUsuario, nome, email, senha, confirmarSenha, dataNascimento, celular, cpf, estadoSelecionado, municipioSelecionado } = this.state;
 
         // Validação de senha
         if (senha !== confirmarSenha) {
@@ -78,40 +73,42 @@ class Cadastro extends Component {
             return;
         }
 
-        if (foto) {
-            const novoNome = `${Date.now()}-${Math.random().toString(36).substring(7)}.${foto.name.split('.').pop()}`;
-            const renamedFile = new File([foto], novoNome, { type: foto.type });
-            alert('Cadastro realizado com sucesso!');
-        } else {
-            alert('Cadastro realizado com sucesso!');
-        }
-
+        // Realizar a criação do usuário
         createUsuario({
-            idTipoUsuario, nome, email, senha, dataNascimento, celular: celular.replace(/\D/g, ''), cpf: cpf.replace(/\D/g, ''), estado: estadoSelecionado, cidade: municipioSelecionado, foto, inclusaoDataHora: new Date().toISOString()
-        }).then(response => {
-
-            this.setState({
-                nome: '',
-                email: '',
-                senha: '',
-                confirmarSenha: '',
-                dataNascimento: '',
-                celular: '',
-                cpf: '',
-                estadoSelecionado: '',
-                municipioSelecionado: '',
-                foto: null,
-                idTipoUsuario: '',
-                tiposUsuarios: [],
-                errors: {}
+            idTipoUsuario,
+            nome,
+            email,
+            senha,
+            dataNascimento,
+            celular: celular.replace(/\D/g, ''),
+            cpf: cpf.replace(/\D/g, ''),
+            estado: estadoSelecionado,
+            cidade: municipioSelecionado,
+            inclusaoDataHora: new Date().toISOString(),
+        })
+            .then(() => {
+                alert('Cadastro realizado com sucesso!');
+                this.setState({
+                    idTipoUsuario: '',
+                    nome: '',
+                    email: '',
+                    senha: '',
+                    confirmarSenha: '',
+                    dataNascimento: '',
+                    celular: '',
+                    cpf: '',
+                    estadoSelecionado: '',
+                    municipioSelecionado: '',
+                    errors: {},
+                });
+                this.props.navigate('/login'); // Navegar para a página de login
+            })
+            .catch((error) => {
+                console.error('Erro ao cadastrar usuário:', error);
+                alert('Erro ao realizar cadastro. Tente novamente.');
             });
-
-            this.props.navigate('/login');  // Navega para a nova página
-
-        }).catch(error => {
-            console.error('Erro ao cadastrar usuário:', error);
-        });
     };
+
 
     handleDataNascimentoChange = (e) => {
         const { value } = e.target;
@@ -186,13 +183,12 @@ class Cadastro extends Component {
             celular,
             cpf,
             estadoSelecionado,
-            foto,
             tiposUsuarios,
             errors
         } = this.state;
 
         return (
-            <div className="add-user container col-6 mt-4">
+            <div className="add-user container col-5 mt-4">
                 <form onSubmit={this.handleSubmit}>
                     <h1>Cadastro de Usuário</h1>
 
@@ -268,13 +264,8 @@ class Cadastro extends Component {
                         </div>
                     </div>
 
-                    <div className="mb-3">
-                        <label htmlFor="foto" className="form-label">Foto</label>
-                        <input type="file" className="form-control" id="foto" name="foto" accept="image/*" onChange={this.handleFileChange} />
-                    </div>
-
                     <button id="btnConfirmar" className="col-6" type="submit">Cadastrar</button>
-                    <button id="btnTenhLogin" className="col-6" type="button" onClick={() => this.props.navigate('/login')}>Já tenho login</button>
+                    <button id="btnTenhoLogin" className="col-6" type="button" onClick={() => this.props.navigate('/login')}>Já tenho login</button>
                 </form>
             </div>
         );

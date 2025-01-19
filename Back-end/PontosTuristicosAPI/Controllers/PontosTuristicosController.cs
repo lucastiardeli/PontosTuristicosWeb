@@ -32,8 +32,11 @@ namespace PontosTuristicosAPI.Controllers
 
             if (!string.IsNullOrEmpty(q))
             {
-                query = query.Where(p => p.Nome.Contains(q));
+                query = query.Where(p => p.Nome.Contains(q) || p.Descricao.Contains(q) || p.Referencia.Contains(q));
             }
+
+            // Ordenar por InclusaoDataHora (mais recentes primeiro)
+            query = query.OrderByDescending(p => p.InclusaoDataHora);
 
             // Paginação com filtro
             var totalCount = await query.CountAsync();
@@ -51,22 +54,24 @@ namespace PontosTuristicosAPI.Controllers
             return Ok(result);
         }
 
+
         // GET: api/pontosturisticos/usuario/{idUsuario}
         [HttpGet("usuario/{idUsuario}")]
-        public async Task<IActionResult> GetPontosTuristicosPorUsuario(int idUsuario, [FromQuery] string q = "", [FromQuery] int _page = 1, [FromQuery] int _limit = 5)
+        public async Task<IActionResult> GetPontosTuristicosPorUsuario(int idUsuario, [FromQuery] string q = "", [FromQuery] int _page = 1, [FromQuery] int _limit = 10)
         {
             // Paginação
             var skip = (_page - 1) * _limit;
 
             // Filtro de busca para os pontos turísticos do usuário
-            var query = _context.PontosTuristicos
-                .Where(p => p.IdUsuario == idUsuario)
-                .AsQueryable();
+            var query = _context.PontosTuristicos.Where(p => p.IdUsuario == idUsuario).AsQueryable();
 
             if (!string.IsNullOrEmpty(q))
             {
-                query = query.Where(p => p.Nome.Contains(q));
+                query = query.Where(p => p.Nome.Contains(q) || p.Descricao.Contains(q) || p.Referencia.Contains(q));
             }
+
+            // Ordenar por InclusaoDataHora (mais recentes primeiro)
+            query = query.OrderByDescending(p => p.InclusaoDataHora);
 
             // Paginação com filtro
             var totalCount = await query.CountAsync();
@@ -96,10 +101,36 @@ namespace PontosTuristicosAPI.Controllers
             return ponto;
         }
 
-        // POST: api/pontosturisticos
         [HttpPost]
-        public async Task<ActionResult<PontoTuristico>> PostPontoTuristico(PontoTuristico pontoTuristico)
+        public async Task<ActionResult<PontoTuristico>> PostPontoTuristico([FromBody] PontoTuristico pontoTuristico)
         {
+            if (pontoTuristico.Foto != null)
+            {
+                // Decodifica a string Base64 para um array de bytes
+                byte[] imagemBytes = Convert.FromBase64String(pontoTuristico.Foto);
+
+                // Define o diretório onde as imagens serão armazenadas
+                var diretorioImagens = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imagens");
+
+                // Verifica se o diretório existe, se não, cria
+                if (!Directory.Exists(diretorioImagens))
+                {
+                    Directory.CreateDirectory(diretorioImagens);
+                }
+
+                // Gera o nome do arquivo da imagem
+                string nomeImagem = $"{Guid.NewGuid()}.jpg";
+
+                // Define o caminho completo para armazenar a imagem no servidor
+                string caminhoImagem = Path.Combine(diretorioImagens, nomeImagem);
+
+                // Salva o arquivo de imagem no diretório especificado
+                await System.IO.File.WriteAllBytesAsync(caminhoImagem, imagemBytes);
+
+                // Salva apenas o nome da imagem no banco de dados
+                pontoTuristico.Foto = nomeImagem;
+            }
+
             _context.PontosTuristicos.Add(pontoTuristico);
             await _context.SaveChangesAsync();
 
@@ -142,6 +173,5 @@ namespace PontosTuristicosAPI.Controllers
 
             return NoContent();
         }
-
     }
 }

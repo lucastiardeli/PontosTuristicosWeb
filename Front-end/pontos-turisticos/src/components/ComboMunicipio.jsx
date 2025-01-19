@@ -19,7 +19,6 @@ const ComboMunicipio = ({ uf, onMunicipioChange, municipioSelecionado }) => {
                     setErro('Erro ao carregar os municípios');
                 }
             };
-
             fetchMunicipios();
         }
     }, [uf]);
@@ -47,20 +46,11 @@ const ComboMunicipio = ({ uf, onMunicipioChange, municipioSelecionado }) => {
         onMunicipioChange(municipioNome);
     };
 
-    // Verificando se a lista de sugestões deve ser exibida
     const shouldShowSuggestions = inputMunicipio && !municipioSelecionado;
 
     return (
         <div className="col-12">
-            <input
-                type="text"
-                className="form-control"
-                id="municipio"
-                name="municipio"
-                value={inputMunicipio}
-                onChange={handleInputChange}
-                placeholder="Digite a cidade"
-            />
+            <input type="text" className="form-control" id="municipio" name="municipio" value={inputMunicipio} onChange={handleInputChange} placeholder="Digite a cidade" />
             {shouldShowSuggestions && filtrados.length > 0 && (
                 <ul className="suggestions">
                     {filtrados.map((municipio) => (

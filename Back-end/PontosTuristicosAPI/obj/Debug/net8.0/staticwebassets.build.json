@@ -1,12 +1,331 @@
 {
   "Version": 1,
-  "Hash": "XAsiQQJ+sV3FR8SbvBEMCtVAsuBjZxiP5N62layLJ/Q=",
+  "Hash": "XMzvKG3b+zv19vrAChi12RKxl/WMDKrGgfx83TkS2T0=",
   "Source": "PontosTuristicosAPI",
   "BasePath": "_content/PontosTuristicosAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "PontosTuristicosAPI\\wwwroot",
+      "Source": "PontosTuristicosAPI",
+      "ContentRoot": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\",
+      "BasePath": "_content/PontosTuristicosAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\7e299194-d060-4e9c-b6f7-4f0ca4f78e5f.jpg",
+      "SourceId": "PontosTuristicosAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\",
+      "BasePath": "_content/PontosTuristicosAPI",
+      "RelativePath": "imagens/7e299194-d060-4e9c-b6f7-4f0ca4f78e5f#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vrjxcmqfh4",
+      "Integrity": "pRmM4OpZ5rub481x/OP+zykC6BJb+ocmZ9ldT4uWoeE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagens\\7e299194-d060-4e9c-b6f7-4f0ca4f78e5f.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\9a1628e9-98e5-4a33-b809-790954dea33e.jpg",
+      "SourceId": "PontosTuristicosAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\",
+      "BasePath": "_content/PontosTuristicosAPI",
+      "RelativePath": "imagens/9a1628e9-98e5-4a33-b809-790954dea33e#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0xu7syok2d",
+      "Integrity": "vIMm48NuNI7uvxNpZZaDwKRSvLU5pTFBoiLzq5JlTYQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagens\\9a1628e9-98e5-4a33-b809-790954dea33e.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\ab42e17e-3b17-4973-9914-5015d9d8c8a4.jpg",
+      "SourceId": "PontosTuristicosAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\",
+      "BasePath": "_content/PontosTuristicosAPI",
+      "RelativePath": "imagens/ab42e17e-3b17-4973-9914-5015d9d8c8a4#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g4byoe10qs",
+      "Integrity": "MHMSRafuDNaOgolAMBr6CVHFWIyyz+5QcvHeUUQykz0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagens\\ab42e17e-3b17-4973-9914-5015d9d8c8a4.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "imagens/7e299194-d060-4e9c-b6f7-4f0ca4f78e5f.jpg",
+      "AssetFile": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\7e299194-d060-4e9c-b6f7-4f0ca4f78e5f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "36498"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pRmM4OpZ5rub481x/OP+zykC6BJb+ocmZ9ldT4uWoeE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 19 Jan 2025 02:32:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pRmM4OpZ5rub481x/OP+zykC6BJb+ocmZ9ldT4uWoeE="
+        }
+      ]
+    },
+    {
+      "Route": "imagens/7e299194-d060-4e9c-b6f7-4f0ca4f78e5f.vrjxcmqfh4.jpg",
+      "AssetFile": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\7e299194-d060-4e9c-b6f7-4f0ca4f78e5f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "36498"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pRmM4OpZ5rub481x/OP+zykC6BJb+ocmZ9ldT4uWoeE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 19 Jan 2025 02:32:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vrjxcmqfh4"
+        },
+        {
+          "Name": "label",
+          "Value": "imagens/7e299194-d060-4e9c-b6f7-4f0ca4f78e5f.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pRmM4OpZ5rub481x/OP+zykC6BJb+ocmZ9ldT4uWoeE="
+        }
+      ]
+    },
+    {
+      "Route": "imagens/9a1628e9-98e5-4a33-b809-790954dea33e.0xu7syok2d.jpg",
+      "AssetFile": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\9a1628e9-98e5-4a33-b809-790954dea33e.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "140811"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vIMm48NuNI7uvxNpZZaDwKRSvLU5pTFBoiLzq5JlTYQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 19 Jan 2025 02:18:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0xu7syok2d"
+        },
+        {
+          "Name": "label",
+          "Value": "imagens/9a1628e9-98e5-4a33-b809-790954dea33e.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vIMm48NuNI7uvxNpZZaDwKRSvLU5pTFBoiLzq5JlTYQ="
+        }
+      ]
+    },
+    {
+      "Route": "imagens/9a1628e9-98e5-4a33-b809-790954dea33e.jpg",
+      "AssetFile": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\9a1628e9-98e5-4a33-b809-790954dea33e.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "140811"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vIMm48NuNI7uvxNpZZaDwKRSvLU5pTFBoiLzq5JlTYQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 19 Jan 2025 02:18:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vIMm48NuNI7uvxNpZZaDwKRSvLU5pTFBoiLzq5JlTYQ="
+        }
+      ]
+    },
+    {
+      "Route": "imagens/ab42e17e-3b17-4973-9914-5015d9d8c8a4.g4byoe10qs.jpg",
+      "AssetFile": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\ab42e17e-3b17-4973-9914-5015d9d8c8a4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "287398"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MHMSRafuDNaOgolAMBr6CVHFWIyyz+5QcvHeUUQykz0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 19 Jan 2025 04:15:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g4byoe10qs"
+        },
+        {
+          "Name": "label",
+          "Value": "imagens/ab42e17e-3b17-4973-9914-5015d9d8c8a4.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MHMSRafuDNaOgolAMBr6CVHFWIyyz+5QcvHeUUQykz0="
+        }
+      ]
+    },
+    {
+      "Route": "imagens/ab42e17e-3b17-4973-9914-5015d9d8c8a4.jpg",
+      "AssetFile": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\ab42e17e-3b17-4973-9914-5015d9d8c8a4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "287398"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MHMSRafuDNaOgolAMBr6CVHFWIyyz+5QcvHeUUQykz0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 19 Jan 2025 04:15:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MHMSRafuDNaOgolAMBr6CVHFWIyyz+5QcvHeUUQykz0="
+        }
+      ]
+    }
+  ]
 }

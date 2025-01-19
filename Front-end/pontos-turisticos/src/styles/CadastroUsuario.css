@@ -10,7 +10,6 @@
 .add-user label {
     color: rgba(104,104,103,255);
     font-weight: bold;
-
 }
 
 .add-user h1 {
@@ -39,7 +38,7 @@
     background: #0e355f;
 }
 
-#btnTenhLogin {
+#btnTenhoLogin {
     background: #a0a0a3cc;
 }
 

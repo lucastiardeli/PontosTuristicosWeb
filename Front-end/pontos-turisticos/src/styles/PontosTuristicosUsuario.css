@@ -1,0 +1,26 @@
+.pagination {
+    padding-bottom: 50px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background: #0e355f;
+}
+
+#btnEditar {
+
+    background: rgb(216, 213, 14) !important;
+
+}
+
+#btnExcluir {
+
+    background: rgb(190, 19, 19) !important;
+    margin-left:5px;
+
+}
