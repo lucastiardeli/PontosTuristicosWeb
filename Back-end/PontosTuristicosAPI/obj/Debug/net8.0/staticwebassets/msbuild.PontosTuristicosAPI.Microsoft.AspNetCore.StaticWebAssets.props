@@ -1,5 +1,59 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\302dc042-cc6f-45f4-b647-b1c5c3faff0e.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>PontosTuristicosAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/PontosTuristicosAPI</BasePath>
+      <RelativePath>imagens/302dc042-cc6f-45f4-b647-b1c5c3faff0e.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>tiuq5kchuf</Fingerprint>
+      <Integrity>BRIJTm083xtVHaLoIUG2TyV6mLyUTVYGM7szCptfe4Q=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\302dc042-cc6f-45f4-b647-b1c5c3faff0e.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\5870cc1e-79db-47ed-b7ad-67189514a105.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>PontosTuristicosAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/PontosTuristicosAPI</BasePath>
+      <RelativePath>imagens/5870cc1e-79db-47ed-b7ad-67189514a105.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>hv4wd0bass</Fingerprint>
+      <Integrity>U8KbBecMX5e9yjjTib8fu16HqC+kO0yNgdEYTG0M8pw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\5870cc1e-79db-47ed-b7ad-67189514a105.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\68cf707f-bdad-4877-a064-a47479a6d7c1.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>PontosTuristicosAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/PontosTuristicosAPI</BasePath>
+      <RelativePath>imagens/68cf707f-bdad-4877-a064-a47479a6d7c1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>hv4wd0bass</Fingerprint>
+      <Integrity>U8KbBecMX5e9yjjTib8fu16HqC+kO0yNgdEYTG0M8pw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\68cf707f-bdad-4877-a064-a47479a6d7c1.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\7e299194-d060-4e9c-b6f7-4f0ca4f78e5f.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>PontosTuristicosAPI</SourceId>
@@ -36,6 +90,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\9a1628e9-98e5-4a33-b809-790954dea33e.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\a4ae5dbe-b563-4a2d-9269-1dcff7830d2f.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>PontosTuristicosAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/PontosTuristicosAPI</BasePath>
+      <RelativePath>imagens/a4ae5dbe-b563-4a2d-9269-1dcff7830d2f.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>hv4wd0bass</Fingerprint>
+      <Integrity>U8KbBecMX5e9yjjTib8fu16HqC+kO0yNgdEYTG0M8pw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\a4ae5dbe-b563-4a2d-9269-1dcff7830d2f.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\ab42e17e-3b17-4973-9914-5015d9d8c8a4.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>PontosTuristicosAPI</SourceId>
@@ -53,6 +125,60 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\ab42e17e-3b17-4973-9914-5015d9d8c8a4.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\ac13377c-82a5-4c10-a6c6-c1229da84619.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>PontosTuristicosAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/PontosTuristicosAPI</BasePath>
+      <RelativePath>imagens/ac13377c-82a5-4c10-a6c6-c1229da84619.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>bkj2e8o9tc</Fingerprint>
+      <Integrity>dYILDUKxUVC/NNOzO8xgwY8f0RWiy0nEad3+znahAoY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\ac13377c-82a5-4c10-a6c6-c1229da84619.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\b2df0a29-8ac3-489d-a0cb-7c25f0e4fb5b.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>PontosTuristicosAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/PontosTuristicosAPI</BasePath>
+      <RelativePath>imagens/b2df0a29-8ac3-489d-a0cb-7c25f0e4fb5b.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>hv4wd0bass</Fingerprint>
+      <Integrity>U8KbBecMX5e9yjjTib8fu16HqC+kO0yNgdEYTG0M8pw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\b2df0a29-8ac3-489d-a0cb-7c25f0e4fb5b.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\fa13b687-c653-4ce1-8778-010ceb587e07.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>PontosTuristicosAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/PontosTuristicosAPI</BasePath>
+      <RelativePath>imagens/fa13b687-c653-4ce1-8778-010ceb587e07.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>hv4wd0bass</Fingerprint>
+      <Integrity>U8KbBecMX5e9yjjTib8fu16HqC+kO0yNgdEYTG0M8pw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\fa13b687-c653-4ce1-8778-010ceb587e07.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

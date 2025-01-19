@@ -75,6 +75,8 @@ class Home extends Component {
         return (
             <div className="container">
                 <div className="home col-12">
+                    <h1 className='logo text-center'>Essência do Brasil</h1>
+                    <h2 className='logo text-center'>Seu lugar aqui!</h2>
                     <div className="busca offset-3 col-9">
                         <div className='row'>
                             <div className='col-6'>

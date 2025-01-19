@@ -55,6 +55,8 @@ class Login extends Component {
                 <form onSubmit={this.handleLogin}> {/* Usando onSubmit no formulário */}
                     <h1>LOGIN</h1>
 
+                    {error && <div className="alert alert-danger m-2">{error}</div>}
+
                     <div className="mb-3 col-12">
                         <label htmlFor="email" className="form-label required">E-mail</label>
                         <input className='form-control' type="text" name="email" placeholder="E-mail" value={email} onChange={this.handleInputChange} />
@@ -68,7 +70,6 @@ class Login extends Component {
                     <div className="col-12">
                         <button id='btnLogar' className="col-6" type="submit">Logar</button>
                         <button id="btnSemCadastro" className="col-6" onClick={() => this.props.navigate('/cadastro-usuario')} type="button">Não possuo cadastro</button>
-                        {error && <p style={{ color: "red" }}>{error}</p>}
                     </div>
 
                 </form>

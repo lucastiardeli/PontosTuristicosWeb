@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
-import '../styles/ModalDetalhesPonto.css'; // Certifique-se de importar o CSS
+import '../styles/ModalDetalhesPonto.css';
 
 const ModalDetalhesPonto = ({ showModal, hideModel, pontoData }) => {
     return (

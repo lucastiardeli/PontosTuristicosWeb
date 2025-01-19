@@ -21,7 +21,7 @@ namespace PontosTuristicosAPI.Models
         [Required, StringLength(30)]
         public string Cidade { get; set; } = string.Empty;
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string? Referencia { get; set; }
 
         [Required, StringLength(100)]

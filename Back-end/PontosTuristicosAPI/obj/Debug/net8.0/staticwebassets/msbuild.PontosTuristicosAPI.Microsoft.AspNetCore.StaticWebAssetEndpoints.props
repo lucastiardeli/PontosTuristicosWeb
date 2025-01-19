@@ -1,5 +1,41 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/302dc042-cc6f-45f4-b647-b1c5c3faff0e.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\302dc042-cc6f-45f4-b647-b1c5c3faff0e.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-BRIJTm083xtVHaLoIUG2TyV6mLyUTVYGM7szCptfe4Q="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"813731"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022BRIJTm083xtVHaLoIUG2TyV6mLyUTVYGM7szCptfe4Q=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:41:44 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/302dc042-cc6f-45f4-b647-b1c5c3faff0e.tiuq5kchuf.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\302dc042-cc6f-45f4-b647-b1c5c3faff0e.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"tiuq5kchuf"},{"Name":"integrity","Value":"sha256-BRIJTm083xtVHaLoIUG2TyV6mLyUTVYGM7szCptfe4Q="},{"Name":"label","Value":"_content/PontosTuristicosAPI/imagens/302dc042-cc6f-45f4-b647-b1c5c3faff0e.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"813731"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022BRIJTm083xtVHaLoIUG2TyV6mLyUTVYGM7szCptfe4Q=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:41:44 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/5870cc1e-79db-47ed-b7ad-67189514a105.hv4wd0bass.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\5870cc1e-79db-47ed-b7ad-67189514a105.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"hv4wd0bass"},{"Name":"integrity","Value":"sha256-U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw="},{"Name":"label","Value":"_content/PontosTuristicosAPI/imagens/5870cc1e-79db-47ed-b7ad-67189514a105.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"429729"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:41:28 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/5870cc1e-79db-47ed-b7ad-67189514a105.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\5870cc1e-79db-47ed-b7ad-67189514a105.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"429729"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:41:28 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/68cf707f-bdad-4877-a064-a47479a6d7c1.hv4wd0bass.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\68cf707f-bdad-4877-a064-a47479a6d7c1.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"hv4wd0bass"},{"Name":"integrity","Value":"sha256-U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw="},{"Name":"label","Value":"_content/PontosTuristicosAPI/imagens/68cf707f-bdad-4877-a064-a47479a6d7c1.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"429729"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:41:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/68cf707f-bdad-4877-a064-a47479a6d7c1.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\68cf707f-bdad-4877-a064-a47479a6d7c1.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"429729"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:41:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/7e299194-d060-4e9c-b6f7-4f0ca4f78e5f.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\7e299194-d060-4e9c-b6f7-4f0ca4f78e5f.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -24,6 +60,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-vIMm48NuNI7uvxNpZZaDwKRSvLU5pTFBoiLzq5JlTYQ="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"140811"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022vIMm48NuNI7uvxNpZZaDwKRSvLU5pTFBoiLzq5JlTYQ=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 02:18:36 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/a4ae5dbe-b563-4a2d-9269-1dcff7830d2f.hv4wd0bass.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\a4ae5dbe-b563-4a2d-9269-1dcff7830d2f.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"hv4wd0bass"},{"Name":"integrity","Value":"sha256-U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw="},{"Name":"label","Value":"_content/PontosTuristicosAPI/imagens/a4ae5dbe-b563-4a2d-9269-1dcff7830d2f.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"429729"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:42:49 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/a4ae5dbe-b563-4a2d-9269-1dcff7830d2f.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\a4ae5dbe-b563-4a2d-9269-1dcff7830d2f.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"429729"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:42:49 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/ab42e17e-3b17-4973-9914-5015d9d8c8a4.g4byoe10qs.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\ab42e17e-3b17-4973-9914-5015d9d8c8a4.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -35,6 +83,42 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-MHMSRafuDNaOgolAMBr6CVHFWIyyz\u002B5QcvHeUUQykz0="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"287398"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022MHMSRafuDNaOgolAMBr6CVHFWIyyz\u002B5QcvHeUUQykz0=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 04:15:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/ac13377c-82a5-4c10-a6c6-c1229da84619.bkj2e8o9tc.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\ac13377c-82a5-4c10-a6c6-c1229da84619.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bkj2e8o9tc"},{"Name":"integrity","Value":"sha256-dYILDUKxUVC/NNOzO8xgwY8f0RWiy0nEad3\u002BznahAoY="},{"Name":"label","Value":"_content/PontosTuristicosAPI/imagens/ac13377c-82a5-4c10-a6c6-c1229da84619.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"231112"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022dYILDUKxUVC/NNOzO8xgwY8f0RWiy0nEad3\u002BznahAoY=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:58:32 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/ac13377c-82a5-4c10-a6c6-c1229da84619.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\ac13377c-82a5-4c10-a6c6-c1229da84619.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-dYILDUKxUVC/NNOzO8xgwY8f0RWiy0nEad3\u002BznahAoY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"231112"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022dYILDUKxUVC/NNOzO8xgwY8f0RWiy0nEad3\u002BznahAoY=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:58:32 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/b2df0a29-8ac3-489d-a0cb-7c25f0e4fb5b.hv4wd0bass.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\b2df0a29-8ac3-489d-a0cb-7c25f0e4fb5b.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"hv4wd0bass"},{"Name":"integrity","Value":"sha256-U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw="},{"Name":"label","Value":"_content/PontosTuristicosAPI/imagens/b2df0a29-8ac3-489d-a0cb-7c25f0e4fb5b.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"429729"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:50:57 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/b2df0a29-8ac3-489d-a0cb-7c25f0e4fb5b.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\b2df0a29-8ac3-489d-a0cb-7c25f0e4fb5b.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"429729"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:50:57 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/fa13b687-c653-4ce1-8778-010ceb587e07.hv4wd0bass.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\fa13b687-c653-4ce1-8778-010ceb587e07.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"hv4wd0bass"},{"Name":"integrity","Value":"sha256-U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw="},{"Name":"label","Value":"_content/PontosTuristicosAPI/imagens/fa13b687-c653-4ce1-8778-010ceb587e07.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"429729"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:53:13 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PontosTuristicosAPI/imagens/fa13b687-c653-4ce1-8778-010ceb587e07.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagens\fa13b687-c653-4ce1-8778-010ceb587e07.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"429729"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022U8KbBecMX5e9yjjTib8fu16HqC\u002BkO0yNgdEYTG0M8pw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 19 Jan 2025 16:53:13 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

@@ -1,6 +1,18 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\302dc042-cc6f-45f4-b647-b1c5c3faff0e.jpg",
+      "PackagePath": "staticwebassets\\imagens\\302dc042-cc6f-45f4-b647-b1c5c3faff0e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\5870cc1e-79db-47ed-b7ad-67189514a105.jpg",
+      "PackagePath": "staticwebassets\\imagens\\5870cc1e-79db-47ed-b7ad-67189514a105.jpg"
+    },
+    {
+      "Id": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\68cf707f-bdad-4877-a064-a47479a6d7c1.jpg",
+      "PackagePath": "staticwebassets\\imagens\\68cf707f-bdad-4877-a064-a47479a6d7c1.jpg"
+    },
+    {
       "Id": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\7e299194-d060-4e9c-b6f7-4f0ca4f78e5f.jpg",
       "PackagePath": "staticwebassets\\imagens\\7e299194-d060-4e9c-b6f7-4f0ca4f78e5f.jpg"
     },
@@ -9,8 +21,24 @@
       "PackagePath": "staticwebassets\\imagens\\9a1628e9-98e5-4a33-b809-790954dea33e.jpg"
     },
     {
+      "Id": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\a4ae5dbe-b563-4a2d-9269-1dcff7830d2f.jpg",
+      "PackagePath": "staticwebassets\\imagens\\a4ae5dbe-b563-4a2d-9269-1dcff7830d2f.jpg"
+    },
+    {
       "Id": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\ab42e17e-3b17-4973-9914-5015d9d8c8a4.jpg",
       "PackagePath": "staticwebassets\\imagens\\ab42e17e-3b17-4973-9914-5015d9d8c8a4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\ac13377c-82a5-4c10-a6c6-c1229da84619.jpg",
+      "PackagePath": "staticwebassets\\imagens\\ac13377c-82a5-4c10-a6c6-c1229da84619.jpg"
+    },
+    {
+      "Id": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\b2df0a29-8ac3-489d-a0cb-7c25f0e4fb5b.jpg",
+      "PackagePath": "staticwebassets\\imagens\\b2df0a29-8ac3-489d-a0cb-7c25f0e4fb5b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\fa13b687-c653-4ce1-8778-010ceb587e07.jpg",
+      "PackagePath": "staticwebassets\\imagens\\fa13b687-c653-4ce1-8778-010ceb587e07.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PontosTuristicosAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

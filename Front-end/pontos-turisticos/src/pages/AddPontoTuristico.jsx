@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { useNavigate } from 'react-router-dom';
 import apiService from '../services/apiService';
 import ComboEstado from '../components/ComboEstado';
 import ComboMunicipo from '../components/ComboMunicipio';
@@ -13,7 +14,8 @@ class AddTourist extends Component {
             referencia: '',
             estadoSelecionado: '',
             municipioSelecionado: '',
-            imagem: null // Novo campo para a imagem
+            imagem: null,
+            errors: {}
         };
     }
 
@@ -27,7 +29,7 @@ class AddTourist extends Component {
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
-                const base64String = reader.result.split(',')[1]; // Remove o prefixo 'data:image/jpeg;base64,' 
+                const base64String = reader.result.split(',')[1];
                 this.setState({ imagem: base64String });
             };
             reader.readAsDataURL(file);
@@ -38,8 +40,8 @@ class AddTourist extends Component {
         event.preventDefault();
         const { nome, descricao, referencia, estadoSelecionado, municipioSelecionado, imagem } = this.state;
 
-        if (!imagem) {
-            alert('Por favor, selecione uma imagem.');
+        if (!nome || !descricao || !estadoSelecionado || !municipioSelecionado) {
+            this.setState({ errors: { geral: 'Preencha todos os campos obrigatórios!' } });
             return;
         }
 
@@ -50,12 +52,11 @@ class AddTourist extends Component {
                 referencia,
                 estado: estadoSelecionado,
                 cidade: municipioSelecionado,
-                inclusaoDataHora: new Date().toISOString(),
                 idUsuario: localStorage.getItem("idUsuario"),
-                foto: imagem // Envia apenas a string base64 da imagem
+                foto: imagem
             });
 
-            alert('Ponto turístico adicionado com sucesso!');
+            this.props.navigate('/my-ponto-turistico');
             this.setState({ nome: '', descricao: '', referencia: '', estadoSelecionado: '', municipioSelecionado: '', imagem: null });
         } catch (error) {
             console.error('Erro ao adicionar ponto turístico:', error);
@@ -72,16 +73,19 @@ class AddTourist extends Component {
     };
 
     render() {
-        const { nome, descricao, referencia, estadoSelecionado, imagem } = this.state;
+        const { nome, descricao, referencia, estadoSelecionado, errors } = this.state;
 
         return (
             <div className="add-tourist">
                 <div className="container col-6">
                     <form onSubmit={this.handleSubmit}>
                         <h1 className='text-center'>Adicionar Ponto Turístico</h1>
+
+                        {errors.geral && <div className="alert alert-danger m-2">{errors.geral}</div>}
+
                         <div className="form-group col-12">
                             <label className="col-12 form-label required" htmlFor="nome">Nome</label>
-                            <input className="col-12 form-control" type="text" name="nome" placeholder="Nome" value={nome} onChange={this.handleChange} />
+                            <input className="col-12 form-control" type="text" name="nome" placeholder="Nome" maxLength="50" value={nome} onChange={this.handleChange} />
                         </div>
 
                         <div className="form-group col-12">
@@ -99,12 +103,12 @@ class AddTourist extends Component {
 
                         <div className="form-group col-12">
                             <label className="col-12" htmlFor="referencia">Referência</label>
-                            <input className="col-12" type="text" name="referencia" placeholder="Referência" value={referencia} onChange={this.handleChange} />
+                            <input className="col-12" type="text" name="referencia" placeholder="Referência" maxLength="100" value={referencia} onChange={this.handleChange} />
                         </div>
 
                         <div className="form-group col-12">
                             <label className="col-12 form-label required" htmlFor="descricao">Descrição</label>
-                            <textarea className="col-12 form-control" name="descricao" placeholder="Descrição" value={descricao} onChange={this.handleChange} />
+                            <textarea className="col-12 form-control" name="descricao" placeholder="Descrição" maxLength="100" value={descricao} onChange={this.handleChange} />
                         </div>
 
                         <div className="form-group col-12">
@@ -122,4 +126,9 @@ class AddTourist extends Component {
     }
 }
 
-export default AddTourist;
+function AddTouristWrapper(props) {
+    const navigate = useNavigate();
+    return <AddTourist {...props} navigate={navigate} />;
+}
+
+export default AddTouristWrapper;

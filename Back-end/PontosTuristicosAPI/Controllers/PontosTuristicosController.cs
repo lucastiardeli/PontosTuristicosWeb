@@ -57,7 +57,7 @@ namespace PontosTuristicosAPI.Controllers
 
         // GET: api/pontosturisticos/usuario/{idUsuario}
         [HttpGet("usuario/{idUsuario}")]
-        public async Task<IActionResult> GetPontosTuristicosPorUsuario(int idUsuario, [FromQuery] string q = "", [FromQuery] int _page = 1, [FromQuery] int _limit = 10)
+        public async Task<IActionResult> GetPontosTuristicosPorUsuario(int idUsuario, [FromQuery] string q = "", [FromQuery] int _page = 1, [FromQuery] int _limit = 5)
         {
             // Paginação
             var skip = (_page - 1) * _limit;
@@ -131,6 +131,8 @@ namespace PontosTuristicosAPI.Controllers
                 pontoTuristico.Foto = nomeImagem;
             }
 
+            pontoTuristico.InclusaoDataHora = DateTime.Now;
+
             _context.PontosTuristicos.Add(pontoTuristico);
             await _context.SaveChangesAsync();
 
@@ -143,6 +145,33 @@ namespace PontosTuristicosAPI.Controllers
         {
             if (idPontoTuristico != pontoAtualizado.IdPontoTuristico)
                 return BadRequest();
+
+            if (!string.IsNullOrEmpty(pontoAtualizado.Foto) && IsBase64(pontoAtualizado.Foto))
+            {
+                // Decodifica a string Base64 para um array de bytes
+                byte[] imagemBytes = Convert.FromBase64String(pontoAtualizado.Foto);
+
+                // Define o diretório onde as imagens serão armazenadas
+                var diretorioImagens = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imagens");
+
+                // Verifica se o diretório existe, se não, cria
+                if (!Directory.Exists(diretorioImagens))
+                {
+                    Directory.CreateDirectory(diretorioImagens);
+                }
+
+                // Gera o nome do arquivo da imagem
+                string nomeImagem = $"{Guid.NewGuid()}.jpg";
+
+                // Define o caminho completo para armazenar a imagem no servidor
+                string caminhoImagem = Path.Combine(diretorioImagens, nomeImagem);
+
+                // Salva o arquivo de imagem no diretório especificado
+                await System.IO.File.WriteAllBytesAsync(caminhoImagem, imagemBytes);
+
+                // Salva apenas o nome da imagem no banco de dados
+                pontoAtualizado.Foto = nomeImagem;
+            }
 
             _context.Entry(pontoAtualizado).State = EntityState.Modified;
 
@@ -160,6 +189,22 @@ namespace PontosTuristicosAPI.Controllers
 
             return NoContent();
         }
+
+        // Função para verificar se a string é base64
+        private bool IsBase64(string str)
+        {
+            try
+            {
+                // Tenta converter a string para base64 e verificar seu formato
+                Convert.FromBase64String(str);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
         [HttpDelete("{idPontoTuristico}")]
         public async Task<IActionResult> DeletePontoTuristico(int idPontoTuristico)

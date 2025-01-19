@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import AddPontoTuristico from './pages/AddPontoTuristico';
 import PontosTuristicosUsuario from './pages/PontosTuristicosUsuario';
+import PerfilUsuario from './pages/PerfilUsuario';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
@@ -54,6 +55,7 @@ class App extends Component {
             <Route path='/login' element={<Login setUser={this.setUser} />} />
             <Route path='/cadastro-usuario' element={<CadastroUsuario />} />
             <Route path='/my-ponto-turistico' element={<PontosTuristicosUsuario />} />
+            <Route path='/meu-perfil' element={<PerfilUsuario />} />
           </Routes>
         </div>
       </Router>

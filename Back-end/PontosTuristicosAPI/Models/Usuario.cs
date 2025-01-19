@@ -36,7 +36,7 @@ namespace PontosTuristicosAPI.Models
         [Required, StringLength(2)]
         public string Estado { get; set; } = string.Empty;
 
-        [Required, StringLength(40)]
+        [Required, StringLength(30)]
         public string Cidade { get; set; } = string.Empty;
 
         [Required]

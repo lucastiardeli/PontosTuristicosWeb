@@ -1,0 +1,23 @@
+.button {
+    font-weight: bold;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+#btnConfirmar {
+    background: #0e355f;
+}
+
+#btnCancelar {
+    background: #a0a0a3cc;
+}
+
+.required {
+    color: black !important;
+}
+
+.required::after {
+    content: ' *';
+    color: red;
+}

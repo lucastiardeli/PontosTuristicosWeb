@@ -22,15 +22,24 @@ class Header extends Component {
         // Variavel em lower case para o código não se perder em caixa alta/baixa
         const userLowerCase = user ? user.toLowerCase() : "";
 
+        const handleLinkClick = (event) => {
+            if (userLowerCase !== 'guia') {
+                event.preventDefault(); // Impede a navegação
+                alert('Somente usuários do tipo Guia podem cadastrar Pontos Turísticos, cadastre-se ou faça login!');
+            }
+        };
+
         return (
             <header className="header">
-                <h1>Pontos Turísticos</h1>
+                <h1>Essência do Brasil</h1>
                 <nav>
                     <Link to="/">Home</Link>
-                    {userLowerCase === 'guia' && <Link to="/add-ponto-turistico">Adicionar Ponto</Link>}
+                    <Link to="/add-ponto-turistico" onClick={handleLinkClick}> Adicionar Ponto </Link>
                     {!userLowerCase && <Link to="/login">Login</Link>}
                     {!userLowerCase && <Link to="/cadastro-usuario">Cadastro</Link>}
                     {userLowerCase === 'guia' && <Link to="/my-ponto-turistico">Meus Pontos Turísticos</Link>}
+                    {userLowerCase && <Link to="/meu-perfil">Meu Perfil</Link>}
+
                     {userLowerCase && <Link to="/login" onClick={this.handleLogout} className="logout-link"> Log out </Link>}
                 </nav>
             </header >

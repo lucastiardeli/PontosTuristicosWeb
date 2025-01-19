@@ -11,7 +11,7 @@ class PontosTuristicosUsuario extends Component {
             error: null,
             page: 1,
             totalPages: 1,
-            limit: 10,
+            limit: 5,
             search: '',
             showModal: false,
             pontoEdit: null,
@@ -42,42 +42,58 @@ class PontosTuristicosUsuario extends Component {
     };
 
     handleEdit = (idPontoTuristico) => {
-        console.log('idPontoTuristico', idPontoTuristico);
         const ponto = this.state.pontos.find((p) => p.idPontoTuristico === idPontoTuristico);
-        this.setState({ showModal: true, pontoEdit: ponto });
+        this.setState({
+            showModal: true,
+            pontoEdit: {
+                ...ponto,
+                fotoOriginal: ponto.foto,
+            }
+        });
     };
 
     handleSaveEdit = async () => {
         const { pontoEdit } = this.state;
         if (!pontoEdit) return;
 
+        const pontoParaSalvar = {
+            ...pontoEdit,
+            foto: pontoEdit.foto && pontoEdit.foto !== pontoEdit.fotoOriginal ? pontoEdit.foto : pontoEdit.fotoOriginal,
+        };
         try {
-            console.log('pontoEdit ', pontoEdit)
-            const updatedPonto = await apiService.updatePontoTuristico(pontoEdit.idPontoTuristico, pontoEdit);
-            console.log('Ponto turístico atualizado:', updatedPonto);
+            const updatedPonto = await apiService.updatePontoTuristico(pontoEdit.idPontoTuristico, pontoParaSalvar);
 
-            // Atualiza a lista de pontos turísticos após a edição
             const idUsuario = localStorage.getItem('idUsuario');
             this.fetchPontosTuristicos(idUsuario);
-
-            // Fecha o modal
             this.setState({ showModal: false, pontoEdit: null });
+
         } catch (error) {
             console.error('Erro ao salvar edição:', error);
         }
     };
 
+    // Realizar exclusão e atualizar paginação
     handleDelete = async (idPontoTuristico) => {
         const confirmDelete = window.confirm('Tem certeza que deseja excluir este ponto turístico?');
         if (confirmDelete) {
             try {
                 await apiService.deletePontoTuristico(idPontoTuristico);
-                this.setState((prevState) => ({
-                    pontos: prevState.pontos.filter((ponto) => ponto.idPontoTuristico !== idPontoTuristico), // Atualiza a lista removendo o ponto excluído
-                }));
+
+                const idUsuario = localStorage.getItem('idUsuario');
+
+                const { page, limit } = this.state;
+                const response = await apiService.getPontosTuristicosUsuario(idUsuario, page, limit, this.state.search);
+                const totalPages = Math.ceil(response.totalCount / limit);
+
+                const newPage = page > totalPages ? totalPages : page;
+
+                this.setState({
+                    pontos: response.pontosTuristicos,
+                    totalPages,
+                    page: newPage,
+                });
             } catch (error) {
                 console.error('Erro ao excluir ponto turístico:', error);
-                alert('Erro ao excluir o ponto turístico.'); // Mensagem de erro
             }
         }
     };
@@ -106,6 +122,24 @@ class PontosTuristicosUsuario extends Component {
         });
     };
 
+    handleImageChange = (event) => {
+        const { pontoEdit } = this.state;
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const base64String = reader.result.split(',')[1];
+                this.setState({
+                    pontoEdit: {
+                        ...pontoEdit,
+                        foto: base64String,
+                    }
+                });
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
     handleCloseModal = () => {
         this.setState({ showModal: false, pontoEdit: null });
     };
@@ -118,21 +152,24 @@ class PontosTuristicosUsuario extends Component {
         return (
             <div className="container">
 
-                <h1>Meus Pontos Turísticos</h1>
+                <h1 className='logo'>Meus Pontos Turísticos</h1>
 
-                <input type="text" className="form-control" placeholder="Buscar ponto turístico" value={search} onChange={this.handleSearchChange} />
+                <div className='offset-3 col-6'>
+                    <input type="text" className="form-control" placeholder="Buscar ponto turístico" value={search} onChange={this.handleSearchChange} />
+                </div>
 
                 {pontos.length > 0 ? (
                     <>
                         <table className="table mt-3">
                             <thead>
                                 <tr>
-                                    <th>Imagem</th>
+                                    <th>Foto</th>
                                     <th>Nome</th>
                                     <th>Referência</th>
                                     <th>Descrição</th>
                                     <th>Estado</th>
                                     <th>Cidade</th>
+                                    <th>Data/Hora inclusão</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
@@ -147,6 +184,14 @@ class PontosTuristicosUsuario extends Component {
                                         <td>{ponto.descricao}</td>
                                         <td>{ponto.estado}</td>
                                         <td>{ponto.cidade}</td>
+                                        <td>{new Date(ponto.inclusaoDataHora).toLocaleString('pt-BR', {
+                                            day: '2-digit',
+                                            month: '2-digit',
+                                            year: 'numeric',
+                                            hour: '2-digit',
+                                            minute: '2-digit',
+                                            second: '2-digit',
+                                        })}</td>
                                         <td>
                                             <button onClick={() => this.handleEdit(ponto.idPontoTuristico)} id="btnEditar">
                                                 Editar
@@ -166,8 +211,8 @@ class PontosTuristicosUsuario extends Component {
                             <button onClick={() => this.handlePageChange(page + 1)} disabled={page === totalPages}>Avançar</button>
                         </div>
 
-                        <ModalEditarPonto showModal={showModal} pontoEdit={pontoEdit} handleInputChange={this.handleInputChange} handleSaveEdit={this.handleSaveEdit} handleCloseModal={this.handleCloseModal} />
-                    </>) : (<p>Você ainda não cadastrou nenhum ponto turístico.</p>)}
+                        <ModalEditarPonto showModal={showModal} pontoEdit={pontoEdit} handleImageChange={this.handleImageChange} handleInputChange={this.handleInputChange} handleSaveEdit={this.handleSaveEdit} handleCloseModal={this.handleCloseModal} />
+                    </>) : (<p className='text-center text-white pt-5 '>Nenhum Ponto Turístico encontrado.</p>)}
             </div>
         );
     }

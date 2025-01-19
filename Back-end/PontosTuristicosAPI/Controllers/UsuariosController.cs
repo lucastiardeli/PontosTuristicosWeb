@@ -45,8 +45,22 @@ namespace PontosTuristicosAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> PostUsuario([FromBody] Usuario usuarioIncluir)
         {
-            if (usuarioIncluir == null) return BadRequest("Usuário inválido.");
+            if (usuarioIncluir == null)
+                return BadRequest("Usuário inválido.");
 
+            // Verifica se já existe um usuário com o mesmo CPF
+            var usuarioComMesmoCpf = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.CPF == usuarioIncluir.CPF);
+            if (usuarioComMesmoCpf != null)
+                return Conflict("Já existe um usuário com este CPF.");
+
+            // Verifica se já existe um usuário com o mesmo e-mail
+            var usuarioComMesmoEmail = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.Email == usuarioIncluir.Email);
+            if (usuarioComMesmoEmail != null)
+                return Conflict("Já existe um usuário com este e-mail.");
+
+            // Gera o hash da senha
             usuarioIncluir.Senha = HashHelper.GerarHashSHA256(usuarioIncluir.Senha);
 
             // Definindo as datas de inclusão
@@ -57,7 +71,6 @@ namespace PontosTuristicosAPI.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(PostUsuario), new { idUsuario = usuarioIncluir.IdUsuario }, usuarioIncluir);
-
         }
 
         // PUT: api/Usuarios/{IdUsuario}

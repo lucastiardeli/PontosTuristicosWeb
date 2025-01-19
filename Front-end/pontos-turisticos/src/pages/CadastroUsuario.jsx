@@ -53,9 +53,14 @@ class Cadastro extends Component {
 
         const { idTipoUsuario, nome, email, senha, confirmarSenha, dataNascimento, celular, cpf, estadoSelecionado, municipioSelecionado } = this.state;
 
+        if (!nome || !email || !dataNascimento || !estadoSelecionado || !municipioSelecionado || !idTipoUsuario) {
+            this.setState({ errors: { geral: 'Preencha todos os campos obrigatórios!' } });
+            return;
+        }
+
         // Validação de senha
         if (senha !== confirmarSenha) {
-            this.setState({ errors: { senha: 'As senhas não coincidem' } });
+            this.setState({ errors: { geral: 'As senhas não coincidem' } });
             return;
         }
 
@@ -64,12 +69,12 @@ class Cadastro extends Component {
         const celularValido = this.validarCelular(celular);
 
         if (!cpfValido) {
-            this.setState({ errors: { cpf: 'CPF inválido' } });
+            this.setState({ errors: { geral: 'CPF inválido' } });
             return;
         }
 
         if (!celularValido) {
-            this.setState({ errors: { celular: 'Celular inválido' } });
+            this.setState({ errors: { geral: 'Celular inválido' } });
             return;
         }
 
@@ -104,8 +109,11 @@ class Cadastro extends Component {
                 this.props.navigate('/login'); // Navegar para a página de login
             })
             .catch((error) => {
-                console.error('Erro ao cadastrar usuário:', error);
-                alert('Erro ao realizar cadastro. Tente novamente.');
+                if (error.response) {
+                    if (error.response.status === 409) {
+                        this.setState({ errors: { geral: error.response.data } });
+                    }
+                }
             });
     };
 
@@ -119,7 +127,7 @@ class Cadastro extends Component {
             this.setState({ dataNascimento: value });
         } else {
             // Se o formato não for correto, você pode mostrar um erro ou apenas não permitir a mudança
-            this.setState({ errors: { dataNascimento: 'Data de nascimento inválida' } });
+            this.setState({ errors: { geral: 'Data de nascimento inválida' } });
         }
     };
 
@@ -131,7 +139,7 @@ class Cadastro extends Component {
         if (regex.test(value)) {
             this.setState({ email: value, errors: {} });
         } else {
-            this.setState({ email: value, errors: { email: 'Email inválido' } });
+            this.setState({ email: value, errors: { geral: 'Email inválido' } });
         }
     };
 
@@ -192,6 +200,8 @@ class Cadastro extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <h1>Cadastro de Usuário</h1>
 
+                    {errors.geral && <div className="alert alert-danger m-2">{errors.geral}</div>}
+
                     <div className="mb-3 col-12">
                         <label htmlFor="nome" className="form-label required">Nome</label>
                         <input type="text" className="form-control" id="nome" name="nome" value={nome} onChange={this.handleInputChange} maxLength="50" />
@@ -200,20 +210,18 @@ class Cadastro extends Component {
                     <div className="mb-3 col-12">
                         <label htmlFor="email" className="form-label required">Email</label>
                         <input type="email" className="form-control" id="email" name="email" value={email} onChange={this.handleEmailChange} maxLength="40" />
-                        {errors.email && <small className="text-danger">{errors.email}</small>}
                     </div>
 
                     <div className='row'>
 
                         <div className="mb-3 col-6">
                             <label htmlFor="senha" className="form-label required">Senha</label>
-                            <input type="password" className="form-control" id="senha" name="senha" value={senha} onChange={this.handleInputChange} />
+                            <input type="password" className="form-control" id="senha" name="senha" maxLength="10" value={senha} onChange={this.handleInputChange} />
                         </div>
 
                         <div className="mb-3 col-6">
                             <label htmlFor="confirmarSenha" className="form-label required">Confirmar Senha</label>
-                            <input type="password" className="form-control" id="confirmarSenha" name="confirmarSenha" value={confirmarSenha} onChange={this.handleInputChange} />
-                            {errors.senha && <small className="text-danger">{errors.senha}</small>}
+                            <input type="password" className="form-control" id="confirmarSenha" name="confirmarSenha" maxLength="10" value={confirmarSenha} onChange={this.handleInputChange} />
                         </div>
                     </div>
 
@@ -221,19 +229,16 @@ class Cadastro extends Component {
                         <div className="mb-3 col-6">
                             <label htmlFor="dataNascimento" className="form-label required">Dt. Nascimento</label>
                             <input type="date" className="form-control" id="dataNascimento" name="dataNascimento" value={dataNascimento} onChange={this.handleDataNascimentoChange} />
-                            {errors.dataNascimento && <small className="text-danger">{errors.dataNascimento}</small>}
                         </div>
 
                         <div className="mb-3 col-6">
                             <label htmlFor="celular" className="form-label required">Celular</label>
                             <input type="text" className="form-control" id="celular" name="celular" value={celular} onChange={this.formatarCelular} maxLength="15" />
-                            {errors.celular && <small className="text-danger">{errors.celular}</small>}
                         </div>
 
                         <div className="mb-3 col-6">
                             <label htmlFor="cpf" className="form-label required">CPF</label>
                             <input type="text" className="form-control" id="cpf" name="cpf" value={cpf} onChange={this.formatarCPF} maxLength="14" />
-                            {errors.cpf && <small className="text-danger">{errors.cpf}</small>}
                         </div>
 
                         <div className="mb-3 col-6">
@@ -272,7 +277,6 @@ class Cadastro extends Component {
     }
 }
 
-// Envolva o componente com o hook useNavigate
 function CadastroWrapper(props) {
     const navigate = useNavigate();
     return <Cadastro {...props} navigate={navigate} />;
