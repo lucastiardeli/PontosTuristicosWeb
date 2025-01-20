@@ -15,7 +15,7 @@ namespace PontosTuristicosAPI.Models
         [ForeignKey("TipoUsuario")]
         public int IdTipoUsuario { get; set; }
 
-        [Required, StringLength(50)]
+        [Required, StringLength(100)]
         public string Nome { get; set; } = string.Empty;
 
         [Required, StringLength(40)]

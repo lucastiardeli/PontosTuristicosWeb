@@ -75,41 +75,19 @@ namespace PontosTuristicosAPI.Controllers
 
         // PUT: api/Usuarios/{IdUsuario}
         [HttpPut("{idUsuario}")]
-        public async Task<IActionResult> PutUsuario(int idUsuario, [FromBody] Usuario usuario)
+        public async Task<IActionResult> PutUsuario(int idUsuario)
         {
-            if (usuario == null || idUsuario != usuario.IdUsuario) return BadRequest("Usuário inválido.");
-
+            // Verificando se o id do usuário foi fornecido
             var usuarioAtualizar = await _context.Usuarios.FirstOrDefaultAsync(u => u.IdUsuario == idUsuario);
             if (usuarioAtualizar == null) return NotFound($"Usuário não encontrado.");
 
-            // Atualizando os dados do usuário
-            usuarioAtualizar.Nome = usuario.Nome;
-            usuarioAtualizar.Email = usuario.Email;
-            usuarioAtualizar.DataNascimento = usuario.DataNascimento;
-            usuarioAtualizar.Celular = usuario.Celular;
-            usuarioAtualizar.CPF = usuario.CPF;
-            usuarioAtualizar.Estado = usuario.Estado;
-            usuarioAtualizar.Cidade = usuario.Cidade;
-            usuarioAtualizar.Senha = usuario.Senha;
+            // Alterando o tipo de usuário (supondo que tenha um campo TipoUsuario na sua tabela)
+            usuarioAtualizar.IdTipoUsuario = usuarioAtualizar.IdTipoUsuario == 1 ? 2 : 1;
 
             // Salvando as alterações no banco
             await _context.SaveChangesAsync();
 
-            return NoContent();  // Retorna status 204 (sem conteúdo)
-        }
-
-        // DELETE: api/Usuarios/{IdUsuario}
-        [HttpDelete("{idUsuario}")]
-        public async Task<IActionResult> DeleteUsuario(int idUsuario)
-        {
-            var usuarioExcluir = await _context.Usuarios.FirstOrDefaultAsync(u => u.IdUsuario == idUsuario);
-            if (usuarioExcluir == null) return NotFound($"Usuário não encontrado.");
-
-            // Removendo o usuário do banco de dados
-            _context.Usuarios.Remove(usuarioExcluir);
-            await _context.SaveChangesAsync();
-
-            return NoContent();  // Retorna status 204 (sem conteúdo)
+            return Ok(usuarioAtualizar);
         }
     }
 }

@@ -1,0 +1,14 @@
+.card-perfil {
+    background-color: white;
+    padding: 20px;
+    margin-top: 10vh;
+}
+
+p {
+    color: #3a3a3dcc;
+}
+
+label{
+    font-weight: bold;
+    color: black
+}

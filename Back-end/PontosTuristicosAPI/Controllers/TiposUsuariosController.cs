@@ -28,16 +28,5 @@ namespace PontosTuristicosAPI.Controllers
 
             return Ok(tiposUsuarios);
         }
-
-        // GET: api/TiposUsuarios/{IdTipoUsuario}
-        [HttpGet("{idTipoUsuario}")]
-        public async Task<IActionResult> GetTipoUsuario(int idTipoUsuario)
-        {
-            var tipoUsuario = await _context.TiposUsuarios.FirstOrDefaultAsync(t => t.IdTipoUsuario == idTipoUsuario);
-            if (tipoUsuario == null) return NotFound($"Tipo Usuário não encontrado.");
-
-            return Ok(tipoUsuario);
-        }
-
     }
 }

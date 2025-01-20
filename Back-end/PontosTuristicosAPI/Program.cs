@@ -48,7 +48,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 var app = builder.Build();
 
-// Configurar o pipeline de requisições
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -62,14 +61,10 @@ if (app.Environment.IsDevelopment())
 // Usar a política de CORS
 app.UseCors("Permitir");
 
-// Usar autenticação e autorização
 app.UseAuthentication();
 app.UseAuthorization();
-
-// Configuração para servir arquivos estáticos da pasta wwwroot/imagens
 app.UseStaticFiles(); // Serve arquivos estáticos de wwwroot
 
-// Caso queira servir especificamente a pasta 'wwwroot/imagens'
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imagens")),

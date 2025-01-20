@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import CadastroUsuario from './pages/CadastroUsuario';
 import Login from './pages/Login';
-//import RotaProtegia from './componentes/RotaProtegida';
-//import PontosTuristicosAdmin from './componentes/PontosTuristicosAdmin';
 import Home from './pages/Home';
 import AddPontoTuristico from './pages/AddPontoTuristico';
 import PontosTuristicosUsuario from './pages/PontosTuristicosUsuario';
@@ -55,7 +53,7 @@ class App extends Component {
             <Route path='/login' element={<Login setUser={this.setUser} />} />
             <Route path='/cadastro-usuario' element={<CadastroUsuario />} />
             <Route path='/my-ponto-turistico' element={<PontosTuristicosUsuario />} />
-            <Route path='/meu-perfil' element={<PerfilUsuario />} />
+            <Route path='/meu-perfil' element={<PerfilUsuario atualizarUsuario={this.setUser} />} />
           </Routes>
         </div>
       </Router>

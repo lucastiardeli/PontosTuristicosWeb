@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ComboEstado from '../components/ComboEstado';
 import ComboMunicipo from '../components/ComboMunicipio';
 import '../styles/CadastroUsuario.css';
-import { getTiposUsuarios, createUsuario } from '../services/apiService';
+import apiService from '../services/apiService';
 import { useNavigate } from 'react-router-dom';
 
 class Cadastro extends Component {
@@ -26,7 +26,7 @@ class Cadastro extends Component {
     }
 
     componentDidMount() {
-        getTiposUsuarios()
+        apiService.getTiposUsuarios()
             .then(tiposUsuarios => {
                 this.setState({ tiposUsuarios });
             })
@@ -79,7 +79,7 @@ class Cadastro extends Component {
         }
 
         // Realizar a criação do usuário
-        createUsuario({
+        apiService.createUsuario({
             idTipoUsuario,
             nome,
             email,
