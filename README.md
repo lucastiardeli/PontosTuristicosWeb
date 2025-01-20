@@ -1,20 +1,24 @@
 # PontosTuristicosWeb
 
+# PontosTuristicosWeb
+
 Teste para desenvolvedor WEB
 
 Como compilar o projeto:
 
-SQL SERVER:
+SQL Server:
 
-Primeiramente execute no SQL server 'CREATE DATABASE PontosTuriticos' para criar o banco de dados, importante ressaltar que o banco deve ser criado no localhost, ou seja, no proprio banco da maquina e com a permissão de login atividade de Autentição por windows.
+Primeiramente execute no SQL Server 'CREATE DATABASE PontosTuristicos' para criar o banco de dados, importante ressaltar que o banco deve ser criado no localhost, ou seja, no SQL Server Express instalado na máquina. O login precisa ser na opção Autenticação com Windows
 
 C#:
 
-Use o Visual Studio Code. Abra o terminal na pasta 'PontosTuristicosAPI' e primeiramente execute o comando 'dotnet ef database update' para criar as tabelas do banco de dados, após isso execute a API com 'dotnet watch run', ao executar a API o swagger será aberto no navegar com os endpoints.
+Use o Visual Studio Code. Abra o terminal na pasta 'PontosTuristicosAPI' e execute primeiramente o comando 'dotnet ef database update' para criar as tabelas do banco de dados, após isso execute a API com 'dotnet watch run', ao executar a API o swagger será aberto no navegar com os endpoints.
+
+É usado a versão 8.0.0 do .net, certifique que esteja instalado.
 
 React:
 
-Use o Visual Studio Code. Abra o terminal na pasta 'pontos-turisticos' e execute 'npm install' para instalar as dependências da aplicação, após isso use o 'npm start' para iniciar a aplicação, importante ressaltar que a aplicação necessita estar iniciada na posta 3000 do localhost e ela já está configurada para isso.
+Use o Visual Studio Code. Abra o terminal na pasta 'pontos-turisticos' e execute 'npm install' para instalar as dependências da aplicação, após isso use o 'npm start' para iniciar a aplicação, importante ressaltar que a aplicação necessita estar iniciada na porta 3000 do localhost e ela já está configurada para isso.
 
 Explicação do projeto:
 
@@ -22,7 +26,7 @@ Projeto feito com SQL Server, C# asp.net core e React js.
 
 Projeto desenvolvido em 3 camadas, juntamente com Git para controle de versionamento. Na aplicação foi desenvolvido o CRUD proposto no teste, voltado para pontos turísticos mas também foi adicionado outras funcionalidades como o Cadastro e Login de Usuário.
 
-A aplicação utiliza axios, desse modo não renderiza a página desnecessariamente.
+A aplicação utiliza axios, desse modo não atualiza a página desnecessariamente.
 
 Uso do JWT para login, desse modo gerenciando melhor os estados de login. O token gerado expira a cada 1 hora.
 
