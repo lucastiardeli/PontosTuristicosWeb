@@ -98,6 +98,21 @@ class PontosTuristicosUsuario extends Component {
         }
     };
 
+    // Realizar exclusão da foto
+    handleDeleteFoto = async (idPontoTuristico) => {
+        const confirmDelete = window.confirm('Tem certeza que deseja excluir a foto?');
+        if (confirmDelete) {
+            try {
+                await apiService.updateFoto(idPontoTuristico);
+
+                const idUsuario = localStorage.getItem('idUsuario');
+                this.fetchPontosTuristicos(idUsuario);
+            } catch (error) {
+                console.error('Erro ao excluir foto:', error);
+            }
+        }
+    };
+
     handlePageChange = (newPage) => {
         this.setState({ page: newPage }, () => {
             const idUsuario = localStorage.getItem('idUsuario');
@@ -192,12 +207,15 @@ class PontosTuristicosUsuario extends Component {
                                             minute: '2-digit',
                                             second: '2-digit',
                                         })}</td>
-                                        <td>
+                                        <td className="custom-width">
                                             <button onClick={() => this.handleEdit(ponto.idPontoTuristico)} id="btnEditar">
                                                 Editar
                                             </button>
                                             <button onClick={() => this.handleDelete(ponto.idPontoTuristico)} id="btnExcluir">
                                                 Excluir
+                                            </button>
+                                            <button onClick={() => this.handleDeleteFoto(ponto.idPontoTuristico)} id="btnExcluir">
+                                                Excluir Foto
                                             </button>
                                         </td>
                                     </tr>

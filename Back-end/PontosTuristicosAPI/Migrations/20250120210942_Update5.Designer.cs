@@ -12,8 +12,8 @@ using PontosTuristicosAPI.Data;
 namespace PontosTuristicosAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250119021323_Update4")]
-    partial class Update4
+    [Migration("20250120210942_Update5")]
+    partial class Update5
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,67 +24,6 @@ namespace PontosTuristicosAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("PontosTuristicosAPI.Models.CriterioAvaliacao", b =>
-                {
-                    b.Property<int>("IdCriterioAvaliacao")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCriterioAvaliacao"));
-
-                    b.Property<string>("Descricao")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<DateTime>("InclusaoDataHora")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Valor")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdCriterioAvaliacao");
-
-                    b.ToTable("CriteriosAvaliacoes");
-
-                    b.HasData(
-                        new
-                        {
-                            IdCriterioAvaliacao = 1,
-                            Descricao = "Muito ruim",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8794),
-                            Valor = 1
-                        },
-                        new
-                        {
-                            IdCriterioAvaliacao = 2,
-                            Descricao = "Ruim",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8795),
-                            Valor = 2
-                        },
-                        new
-                        {
-                            IdCriterioAvaliacao = 3,
-                            Descricao = "Médio",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8796),
-                            Valor = 3
-                        },
-                        new
-                        {
-                            IdCriterioAvaliacao = 4,
-                            Descricao = "Bom",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8797),
-                            Valor = 4
-                        },
-                        new
-                        {
-                            IdCriterioAvaliacao = 5,
-                            Descricao = "Muito bom",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8798),
-                            Valor = 5
-                        });
-                });
 
             modelBuilder.Entity("PontosTuristicosAPI.Models.PontoTuristico", b =>
                 {
@@ -124,42 +63,14 @@ namespace PontosTuristicosAPI.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Referencia")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("IdPontoTuristico");
-
-                    b.ToTable("PontosTuristicos");
-                });
-
-            modelBuilder.Entity("PontosTuristicosAPI.Models.PontoTuristicoAvaliacao", b =>
-                {
-                    b.Property<int>("IdPontoTuristicoAvaliacao")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPontoTuristicoAvaliacao"));
-
-                    b.Property<string>("Descricao")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("IdCriterioAvaliacao")
-                        .HasColumnType("int");
+                    b.HasKey("IdPontoTuristico");
 
-                    b.Property<int>("IdPontoTuristico")
-                        .HasColumnType("int");
+                    b.HasIndex("IdUsuario");
 
-                    b.Property<int>("IdUsuario")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("InclusaoDataHora")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("IdPontoTuristicoAvaliacao");
-
-                    b.ToTable("PontosTuristicosAvaliacoes");
+                    b.ToTable("PontosTuristicos");
                 });
 
             modelBuilder.Entity("PontosTuristicosAPI.Models.TipoUsuario", b =>
@@ -187,13 +98,13 @@ namespace PontosTuristicosAPI.Migrations
                         {
                             IdTipoUsuario = 1,
                             Descricao = "Guia",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8683)
+                            InclusaoDataHora = new DateTime(2025, 1, 20, 18, 9, 42, 638, DateTimeKind.Local).AddTicks(2572)
                         },
                         new
                         {
                             IdTipoUsuario = 2,
                             Descricao = "Visitante",
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(8693)
+                            InclusaoDataHora = new DateTime(2025, 1, 20, 18, 9, 42, 638, DateTimeKind.Local).AddTicks(2584)
                         });
                 });
 
@@ -217,8 +128,8 @@ namespace PontosTuristicosAPI.Migrations
 
                     b.Property<string>("Cidade")
                         .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime2");
@@ -241,8 +152,8 @@ namespace PontosTuristicosAPI.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Senha")
                         .IsRequired()
@@ -250,6 +161,8 @@ namespace PontosTuristicosAPI.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.HasKey("IdUsuario");
+
+                    b.HasIndex("IdTipoUsuario");
 
                     b.ToTable("Usuarios");
 
@@ -264,10 +177,30 @@ namespace PontosTuristicosAPI.Migrations
                             Email = "admin@gmail.com",
                             Estado = "SP",
                             IdTipoUsuario = 1,
-                            InclusaoDataHora = new DateTime(2025, 1, 18, 23, 13, 23, 22, DateTimeKind.Local).AddTicks(9461),
+                            InclusaoDataHora = new DateTime(2025, 1, 20, 18, 9, 42, 638, DateTimeKind.Local).AddTicks(3373),
                             Nome = "admin",
                             Senha = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
                         });
+                });
+
+            modelBuilder.Entity("PontosTuristicosAPI.Models.PontoTuristico", b =>
+                {
+                    b.HasOne("PontosTuristicosAPI.Models.Usuario", null)
+                        .WithMany()
+                        .HasForeignKey("IdUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_PontoTuristico_Usuario");
+                });
+
+            modelBuilder.Entity("PontosTuristicosAPI.Models.Usuario", b =>
+                {
+                    b.HasOne("PontosTuristicosAPI.Models.TipoUsuario", null)
+                        .WithMany()
+                        .HasForeignKey("IdTipoUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_Usuario_TipoUsuario");
                 });
 #pragma warning restore 612, 618
         }

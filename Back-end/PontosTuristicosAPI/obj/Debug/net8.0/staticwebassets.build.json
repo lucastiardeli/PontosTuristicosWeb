@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zCErTOtn1DIiEAup0VIkPqqJOgwlDzajJ0rgaKwERQ8=",
+  "Hash": "Pi5gVQV0gDmwyU/lxVfbuS1Z0p8d0I3s2Ca9xo71hKo=",
   "Source": "PontosTuristicosAPI",
   "BasePath": "_content/PontosTuristicosAPI",
   "Mode": "Default",
@@ -204,6 +204,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imagens\\b2df0a29-8ac3-489d-a0cb-7c25f0e4fb5b.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\b820d000-22c4-44b8-b48a-63d78be0d375.jpg",
+      "SourceId": "PontosTuristicosAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\",
+      "BasePath": "_content/PontosTuristicosAPI",
+      "RelativePath": "imagens/b820d000-22c4-44b8-b48a-63d78be0d375#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0vbg6d6dar",
+      "Integrity": "DFq5pyVmMywRuLq94T2H8J5O1s+3dqsIrd4mhIss4HM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imagens\\b820d000-22c4-44b8-b48a-63d78be0d375.jpg"
     },
     {
       "Identity": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\fa13b687-c653-4ce1-8778-010ceb587e07.jpg",
@@ -963,6 +984,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-U8KbBecMX5e9yjjTib8fu16HqC+kO0yNgdEYTG0M8pw="
+        }
+      ]
+    },
+    {
+      "Route": "imagens/b820d000-22c4-44b8-b48a-63d78be0d375.0vbg6d6dar.jpg",
+      "AssetFile": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\b820d000-22c4-44b8-b48a-63d78be0d375.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "224709"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DFq5pyVmMywRuLq94T2H8J5O1s+3dqsIrd4mhIss4HM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Jan 2025 00:22:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0vbg6d6dar"
+        },
+        {
+          "Name": "label",
+          "Value": "imagens/b820d000-22c4-44b8-b48a-63d78be0d375.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DFq5pyVmMywRuLq94T2H8J5O1s+3dqsIrd4mhIss4HM="
+        }
+      ]
+    },
+    {
+      "Route": "imagens/b820d000-22c4-44b8-b48a-63d78be0d375.jpg",
+      "AssetFile": "C:\\Users\\motia\\OneDrive\\Área de Trabalho\\sinqia teste\\PontosTuristicosWeb\\Back-end\\PontosTuristicosAPI\\wwwroot\\imagens\\b820d000-22c4-44b8-b48a-63d78be0d375.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "224709"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DFq5pyVmMywRuLq94T2H8J5O1s+3dqsIrd4mhIss4HM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Jan 2025 00:22:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DFq5pyVmMywRuLq94T2H8J5O1s+3dqsIrd4mhIss4HM="
         }
       ]
     },

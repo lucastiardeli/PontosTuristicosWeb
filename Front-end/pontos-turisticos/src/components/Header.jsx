@@ -24,7 +24,7 @@ class Header extends Component {
 
         const handleLinkClick = (event) => {
             if (userLowerCase !== 'guia') {
-                event.preventDefault(); // Impede a navegação
+                event.preventDefault();
                 alert('Somente usuários do tipo Guia podem cadastrar Pontos Turísticos, cadastre-se ou faça login!');
             }
         };

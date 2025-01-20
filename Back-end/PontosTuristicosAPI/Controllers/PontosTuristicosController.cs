@@ -62,7 +62,6 @@ namespace PontosTuristicosAPI.Controllers
             // Paginação
             var skip = (_page - 1) * _limit;
 
-            // Filtro de busca para os pontos turísticos do usuário
             var query = _context.PontosTuristicos.Where(p => p.IdUsuario == idUsuario).AsQueryable();
 
             if (!string.IsNullOrEmpty(q))
@@ -205,6 +204,32 @@ namespace PontosTuristicosAPI.Controllers
             }
         }
 
+        [HttpPut("{idPontoTuristico}/remover-foto")]
+        public async Task<IActionResult> RemoverFoto(int idPontoTuristico)
+        {
+            var ponto = await _context.PontosTuristicos.FindAsync(idPontoTuristico);
+
+            if (ponto == null)
+                return NotFound();
+
+            ponto.Foto = null;
+
+            _context.Entry(ponto).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.PontosTuristicos.Any(e => e.IdPontoTuristico == idPontoTuristico))
+                    return NotFound();
+                else
+                    throw;
+            }
+
+            return NoContent();
+        }
 
         [HttpDelete("{idPontoTuristico}")]
         public async Task<IActionResult> DeletePontoTuristico(int idPontoTuristico)

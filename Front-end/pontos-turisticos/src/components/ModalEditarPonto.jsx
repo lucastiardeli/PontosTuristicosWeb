@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 import ComboEstado from '../components/ComboEstado';
 import ComboMunicipio from '../components/ComboMunicipio';
 import '../styles/ModalEditarPonto.css';
@@ -33,13 +32,7 @@ const ModalEditarPonto = ({ showModal, pontoEdit, handleImageChange, handleInput
                     <div>
                         <div className="form-group">
                             <label>Nome</label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                name="nome"
-                                value={pontoEdit.nome}
-                                onChange={handleInputChange}
-                            />
+                            <input type="text" className="form-control" name="nome" value={pontoEdit.nome} onChange={handleInputChange} />
                         </div>
 
                         <div className="form-group col-12">
@@ -73,53 +66,27 @@ const ModalEditarPonto = ({ showModal, pontoEdit, handleImageChange, handleInput
 
                         <div className="form-group">
                             <label>Referência</label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                name="referencia"
-                                value={pontoEdit.referencia}
-                                onChange={handleInputChange}
-                            />
+                            <input type="text" className="form-control" name="referencia" value={pontoEdit.referencia} onChange={handleInputChange} />
                         </div>
 
                         <div className="form-group">
                             <label>Descrição</label>
-                            <textarea
-                                className="form-control"
-                                name="descricao"
-                                value={pontoEdit.descricao}
-                                onChange={handleInputChange}
-                            />
+                            <textarea className="form-control" name="descricao" value={pontoEdit.descricao} onChange={handleInputChange} />
                         </div>
 
                         <div className="form-group">
                             <label>Nova foto</label>
-                            <input
-                                type="file"
-                                className="form-control"
-                                name="foto"
-                                onChange={handleImageChange}
-                            />
+                            <input type="file" className="form-control" name="foto" onChange={handleImageChange} />
                         </div>
                     </div>
                 )}
             </Modal.Body>
             <Modal.Footer>
                 <div className="col-12">
-                    <button
-                        id="btnConfirmar"
-                        className="col-6"
-                        type="button"
-                        onClick={handleSave}
-                    >
+                    <button id="btnConfirmar" className="col-6" type="button" onClick={handleSave}>
                         Salvar alterações
                     </button>
-                    <button
-                        id="btnCancelar"
-                        className="col-6"
-                        type="button"
-                        onClick={handleCloseModal}
-                    >
+                    <button id="btnCancelar" className="col-6" type="button" onClick={handleCloseModal}>
                         Cancelar
                     </button>
                 </div>

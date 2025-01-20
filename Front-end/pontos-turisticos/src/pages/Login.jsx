@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { useNavigate } from 'react-router-dom';  // Se estiver usando React Router v6
-import apiService from '../services/apiService';  // Importando o apiService
+import { useNavigate } from 'react-router-dom';
+import apiService from '../services/apiService';
 import '../styles/Login.css'
 
 class Login extends Component {
@@ -19,7 +19,7 @@ class Login extends Component {
     };
 
     handleLogin = async (event) => {
-        event.preventDefault(); // Impede o comportamento padrão de envio do formulário
+        event.preventDefault();
 
         const { email, password } = this.state;
         const { setUser } = this.props;
@@ -52,19 +52,19 @@ class Login extends Component {
 
         return (
             <div className='login-user container col-4'>
-                <form onSubmit={this.handleLogin}> {/* Usando onSubmit no formulário */}
+                <form onSubmit={this.handleLogin}>
                     <h1>LOGIN</h1>
 
                     {error && <div className="alert alert-danger m-2">{error}</div>}
 
                     <div className="mb-3 col-12">
                         <label htmlFor="email" className="form-label required">E-mail</label>
-                        <input className='form-control' type="text" name="email" placeholder="E-mail" value={email} onChange={this.handleInputChange} />
+                        <input className='form-control' type="text" name="email" placeholder="E-mail" maxLength={40} value={email} onChange={this.handleInputChange} />
                     </div>
 
                     <div className="mb-3 col-12">
                         <label htmlFor="password" className="form-label required">Senha</label>
-                        <input className='form-control' type="password" name="password" placeholder="Senha" value={password} onChange={this.handleInputChange} />
+                        <input className='form-control' type="password" name="password" placeholder="Senha" maxLength={10} value={password} onChange={this.handleInputChange} />
                     </div>
 
                     <div className="col-12">

@@ -22,6 +22,18 @@ namespace PontosTuristicosAPI.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Usuario>()
+                        .HasOne<TipoUsuario>()
+                        .WithMany()
+                        .HasForeignKey(u => u.IdTipoUsuario)
+                        .HasConstraintName("FK_Usuario_TipoUsuario");
+
+            modelBuilder.Entity<PontoTuristico>()
+                        .HasOne<Usuario>()
+                        .WithMany()
+                        .HasForeignKey(pt => pt.IdUsuario)
+                        .HasConstraintName("FK_PontoTuristico_Usuario");
+
             modelBuilder.Entity<PontoTuristico>()
                         .Property(p => p.Foto)
                         .HasColumnType("VarChar(MAX)");

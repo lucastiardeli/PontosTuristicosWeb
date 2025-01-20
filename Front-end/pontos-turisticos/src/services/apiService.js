@@ -113,6 +113,16 @@ const updateTipoUsuario = async (idPontoTuristico) => {
   }
 };
 
+const updateFoto = async (idPontoTuristico) => {
+  try {
+    const response = await api.put(`/PontosTuristicos/${idPontoTuristico}/remover-foto`);
+    console.log(response);
+    return response.data;
+  } catch (error) {
+    throw new Error('Erro ao excluir foto', error);
+  }
+};
+
 // TODOS OS DELETES
 const deletePontoTuristico = async (idPontoTuristico) => {
   try {
@@ -123,7 +133,6 @@ const deletePontoTuristico = async (idPontoTuristico) => {
   }
 };
 
-// Export default como objeto
 export default {
   login,
   getUserData,
@@ -136,4 +145,5 @@ export default {
   deletePontoTuristico,
   getPerfilUsuario,
   updateTipoUsuario,
+  updateFoto,
 };

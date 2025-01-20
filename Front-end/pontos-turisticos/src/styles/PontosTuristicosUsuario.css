@@ -32,8 +32,12 @@
 }
 
 table td {
-    max-width: 200px; /* Limita a largura máxima da célula */
+    width: 200px; /* Limita a largura máxima da célula */
     white-space: nowrap; /* Impede quebra de linha */
     overflow: hidden; /* Esconde o texto excedente */
     text-overflow: ellipsis; /* Adiciona "..." ao texto cortado */
+}
+
+.custom-width {
+    width: 300px !important;
 }

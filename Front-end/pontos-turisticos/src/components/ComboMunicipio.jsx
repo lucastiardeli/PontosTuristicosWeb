@@ -7,7 +7,7 @@ const ComboMunicipio = ({ uf, onMunicipioChange, municipioSelecionado }) => {
     const [erro, setErro] = useState(null);
     const [inputMunicipio, setInputMunicipio] = useState('');
     const [filtrados, setFiltrados] = useState([]);
-    const [showSuggestions, setShowSuggestions] = useState(false); // Nova flag
+    const [showSuggestions, setShowSuggestions] = useState(false);
 
     useEffect(() => {
         if (uf) {
@@ -26,7 +26,7 @@ const ComboMunicipio = ({ uf, onMunicipioChange, municipioSelecionado }) => {
 
     useEffect(() => {
         if (municipioSelecionado) {
-            setInputMunicipio(municipioSelecionado); // Atualiza o valor do input
+            setInputMunicipio(municipioSelecionado);
         }
     }, [municipioSelecionado]);
 
@@ -45,10 +45,10 @@ const ComboMunicipio = ({ uf, onMunicipioChange, municipioSelecionado }) => {
     };
 
     const handleMunicipioSelect = (municipioNome) => {
-        setInputMunicipio(municipioNome); // Atualiza o input com o município selecionado
-        setFiltrados([]); // Limpa a lista de sugestões
-        setShowSuggestions(false); // Oculta as sugestões
-        onMunicipioChange(municipioNome); // Notifica o componente pai
+        setInputMunicipio(municipioNome);
+        setFiltrados([]);
+        setShowSuggestions(false);
+        onMunicipioChange(municipioNome);
     };
 
     const handleInputBlur = () => {
@@ -72,8 +72,8 @@ const ComboMunicipio = ({ uf, onMunicipioChange, municipioSelecionado }) => {
                 name="municipio"
                 value={inputMunicipio}
                 onChange={handleInputChange}
-                onBlur={handleInputBlur} // Oculta sugestões ao perder o foco
-                onFocus={handleInputFocus} // Mostra sugestões ao focar, se necessário
+                onBlur={handleInputBlur}
+                onFocus={handleInputFocus}
                 placeholder="Digite a cidade"
             />
             {showSuggestions && filtrados.length > 0 && (
