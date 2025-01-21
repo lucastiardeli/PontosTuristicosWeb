@@ -10,7 +10,7 @@ Primeiramente execute no SQL Server 'CREATE DATABASE PontosTuristicos' para cria
 
 C#:
 
-Use o Visual Studio Code. Abra o terminal na pasta 'PontosTuristicosAPI' e execute:
+Use o Visual Studio Code. Abra o terminal na pasta 'PontosTuristicosAPI'. Em appsettings.json mude o localhost\\SQLEXPRESS para o servidor local que deseja usar com tipo de conexão de Autenticação com Windows:
 
 dotnet restore
 dotnet tool install --global dotnet-ef --version 8.0.0
