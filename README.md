@@ -1,24 +1,34 @@
 # PontosTuristicosWeb
 
-# PontosTuristicosWeb
-
 Teste para desenvolvedor WEB
 
 Como compilar o projeto:
 
 SQL Server:
 
-Primeiramente execute no SQL Server 'CREATE DATABASE PontosTuristicos' para criar o banco de dados, importante ressaltar que o banco deve ser criado no localhost, ou seja, no SQL Server Express instalado na máquina. O login precisa ser na opção Autenticação com Windows
+Primeiramente execute no SQL Server 'CREATE DATABASE PontosTuristicos' para criar o banco de dados, importante ressaltar que o banco deve ser criado no localhost, ou seja, instalado na máquina. O login precisa ser na opção Autenticação com Windows
 
 C#:
 
-Use o Visual Studio Code. Abra o terminal na pasta 'PontosTuristicosAPI' e execute primeiramente o comando 'dotnet ef database update' para criar as tabelas do banco de dados, após isso execute a API com 'dotnet watch run', ao executar a API o swagger será aberto no navegar com os endpoints.
+Use o Visual Studio Code. Abra o terminal na pasta 'PontosTuristicosAPI' e execute:
 
-É usado a versão 8.0.0 do .net, certifique que esteja instalado.
+dotnet restore
+dotnet tool install --global dotnet-ef --version 8.0.0
+dotnet build
+dotnet ef database update
+
+Após isso execute a API com 'dotnet watch run'.
 
 React:
 
-Use o Visual Studio Code. Abra o terminal na pasta 'pontos-turisticos' e execute 'npm install' para instalar as dependências da aplicação, após isso use o 'npm start' para iniciar a aplicação, importante ressaltar que a aplicação necessita estar iniciada na porta 3000 do localhost e ela já está configurada para isso.
+Use o Visual Studio Code. Abra o terminal na pasta 'pontos-turisticos' e execute:
+
+npm install --legacy-peer-deps
+npm install @testing-library/react@latest
+npm install
+npm update
+
+Após isso use o 'npm start' para iniciar a aplicação, importante ressaltar que a aplicação necessita estar iniciada na porta 3000 do localhost e ela já está configurada para isso.
 
 Explicação do projeto:
 

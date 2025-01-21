@@ -8,6 +8,14 @@ using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("http://localhost:5117");
+
+var imagensPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imagens");
+if (!Directory.Exists(imagensPath))
+{
+    Directory.CreateDirectory(imagensPath);
+}
+
 // Adicionar suporte ao CORS
 builder.Services.AddCors(options =>
 {
